@@ -239,7 +239,7 @@ input {
 .scroll-header {
   box-shadow: 0 1px 12px hsla(var(--hue-color), 63%, 15%, 0.15);
   transition: .4s;
-  background-color: #FFF;
+  background-color: var(--body-color);
 }
 
 /*---------------------------------------------*/
@@ -346,3 +346,17 @@ input {
   font-weight: var(--font-medium);
   margin-bottom: var(--mb-2-5)
 }
+
+.button {
+  display: inline-block;
+  background-color: var(--first-color);
+  color: var(--white-color);
+  padding: 1rem 2rem;
+  font-weight: var(--font-semi-bold);
+  transition: .3s;
+}
+
+.button:hover {
+  background-color: var(--first-color-alt);
+}
+
