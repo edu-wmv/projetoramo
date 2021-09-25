@@ -239,6 +239,7 @@ input {
 .scroll-header {
   box-shadow: 0 1px 12px hsla(var(--hue-color), 63%, 15%, 0.15);
   transition: .4s;
+  background-color: #FFF;
 }
 
 /*---------------------------------------------*/
