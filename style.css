@@ -16,14 +16,9 @@ body {
   overflow: hidden;
 }
 
-section {
+.swiper-container {
   position: relative;
-  width: 100%;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: #2196f3;
+  top: 2rem;
 }
 
 .card {
@@ -39,6 +34,8 @@ section {
   box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.9);
   text-align: center;
   align-content: center;
+
+  filter: grayscale(1);
 }
 
 .card-image {
@@ -71,4 +68,9 @@ section {
 .swiper-slide .swiper-slide-shadow-left,
 .swiper-slide .swiper-slide-shadow-right {
   border-radius: 15px !important;
+}
+
+.swiper-slide-active {
+  bottom: 2rem;
+  filter: none;
 }
