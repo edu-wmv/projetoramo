@@ -1,4 +1,64 @@
-body {
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Raleway:wght@500;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Open Sans', sans-serif;
+}
+
+section {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
   display: flex;
   justify-content: center;
+  align-items: center;
+  background: #2196f3;
+}
+
+.swiper-container {
+  width: 100%;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  overflow: hidden;
+}
+
+.swiper-slide {
+  width: 200px !important;
+  box-shadow: 0 15px 50px rgba(0, 0, 0, 0.2);
+  display: flex;
+  justify-content: center;
+}
+
+.swiper-slide img {
+  height: 500px;
+  max-width: 300px;
+  object-fit: cover;
+  filter: grayscale(1);
+}
+
+.swiper-slide-active img {
+  filter: none;
+}
+
+.swiper-container h2 {
+  position: absolute;
+  top: 1.5rem;
+  text-decoration: none;
+  text-align: center;
+}
+
+.swiper-container h3 {
+  position: absolute;
+  bottom: 1.5rem;
+}
+
+.swiper-container h2, h3 {
+  color: #FFF;
+}
+
+.swiper-slide .swiper-slide-shadow-left,
+.swiper-slide .swiper-slide-shadow-right {
+  background-image: none !important;
 }
