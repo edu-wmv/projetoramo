@@ -393,3 +393,8 @@ input {
   background-color: var(--selection-color);
 }
 
+/*---------------------------------------------*/
+
+.news-box {
+  display: flex;
+}
