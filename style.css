@@ -22,8 +22,7 @@ body {
 
 .swiper-container {
   position: relative;
-  overflow-x: hidden;
-  bottom: 2rem;
+  overflow: clip;
 }
 
 .swiper-container::-webkit-scrollbar {
@@ -75,6 +74,11 @@ body {
   font-size: 1rem;
   position: relative;
   bottom: 4px;
+}
+
+.swiper-3d .swiper-slide-shadow-left, 
+.swiper-3d .swiper-slide-shadow-right{
+  border-radius: 10px;
 }
 
 .swiper-slide-active img{
