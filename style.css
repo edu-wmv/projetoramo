@@ -23,6 +23,7 @@ body {
 .swiper-container {
   position: relative;
   overflow-x: hidden;
+  bottom: 2rem;
 }
 
 .swiper-container::-webkit-scrollbar {
