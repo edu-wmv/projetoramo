@@ -273,7 +273,7 @@ input {
   }
 
   .nav__icon {
-    display: none;
+    display: none !important;
   }
 
   .nav__name {
@@ -397,4 +397,9 @@ input {
 
 .news-box {
   display: flex;
+}
+
+.news {
+  display: grid;
+  grid-template-columns: image title;
 }
