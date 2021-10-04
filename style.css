@@ -110,10 +110,6 @@ body {
 
 @media screen and (min-width: 769px){
 
-  body {
-    transition: all 4s ease-in-out 1s;
-  }
-
   .swiper-container {
     display: none;
   }
@@ -122,7 +118,6 @@ body {
     display: flex !important;
     flex-direction: row;
     width: 90vw;
-    transition: all 4s ease-in-out 1s;
   }
 
   .card-image {
