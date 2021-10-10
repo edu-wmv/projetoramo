@@ -11,7 +11,7 @@
   --text-color: hsl(39, 24%, 42%);
   --text-color-light: hsl(39, 8%, 60%);
   --input-color: hsl(39, 24%, 97%);
-  --body-color: hsl(39, 100%, 99%);
+  --body-color: hsl(36, 100%, 98%);
   --white-color: #FFF;
   --scroll-bar-color: hsl(39, 12%, 90%);
   --scroll-thumb-color: hsl(39, 15%, 75%);
@@ -94,7 +94,7 @@ ul {
 }
 
 a {
-  text-decoration: none;
+  text-decoration: none !important;
 }
 
 img,
@@ -129,7 +129,7 @@ input {
 }
 
 .section__title {
-  font-size: var(--h2-font-size);
+  font-size: var(--h1-font-size);
   color: var(--title-color);
   text-align: center;
   text-transform: capitalize;
@@ -396,11 +396,112 @@ input {
 
 /*---------------------------------------------*/
 
-.news-box {
+.pesquisas {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.pesquisas__box {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  max-width: 900px;
+}
+
+.pesquisa__link {
+  text-decoration: none !important;
+}
+
+.pesquisa__link:hover {
+  transform: scale(1.1);
+  transition: all .4s ease-in-out;
+}
+
+.pesquisa {
+  display: flex;
+  border-radius: 6px;
+  background-color: var(--first-color-second);
+  height: 75px;
+  width: 200px;
+  align-items: center;
+  justify-content: center;
+  margin-right: 15px;
+  margin-bottom: 15px;
+}
+
+@media screen and (max-width: 767px) {
+  .pesquisa {
+    width: 150px;
+  }
+}
+
+.pesquisa span {
+  color: var(--white-color);
+  font-weight: var(--font-semi-bold);
+  font-size: 1rem;
+  text-decoration: none;
+  text-transform: capitalize;
+}
+
+.search_box {
+  height: 40px;
+  width: 350px;
+  margin-bottom: 20px;
   display: flex;
 }
 
-.news {
-  display: grid;
-  grid-template-columns: image title;
+.search_box input {
+  height: 100%;
+  width: 100%;
+  border: none;
+  font-size: 16px;
+  border-radius: 50px;
+  outline: none;
+  padding: 0 20px;
+}
+
+.search-button {
+  display: flex;
+  align-items: center;
+  margin-left: 10px;
+}
+
+.search-button .search__btn {
+  font-size: 1.75rem;
+}
+/*---------------------------------------------*/
+
+.main_section {
+  justify-content: center;
+}
+
+.noticias {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@media screen and (max-width:767px) {
+  .noticias {
+    width: 85vw !important;
+  }
+}
+
+.news:hover {
+  cursor: pointer;
+}
+
+.news-image img {
+  object-fit: cover;
+  height: 100%;
+}
+
+.news-image {
+  padding: 0 !important;
+}
+
+.news_title {
+  font-size: var(--h2-font-size);
 }
