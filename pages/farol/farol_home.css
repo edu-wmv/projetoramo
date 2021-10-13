@@ -90,6 +90,7 @@ h1, h2, h3 {
 
 ul {
   list-style: none;
+  margin-bottom: 0 !important;
 }
 
 a {
@@ -177,6 +178,10 @@ input {
 
 .nav__logo:hover {
   color: var(--title-color);
+}
+
+.nav__link:hover {
+  color: var(--first-color)
 }
 
 @media screen and (max-width: 767px){

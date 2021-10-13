@@ -90,6 +90,7 @@ h1, h2, h3 {
 
 ul {
   list-style: none;
+  margin-bottom: 0;
 }
 
 a {
@@ -128,7 +129,7 @@ input {
 }
 
 .section__title {
-  font-size: var(--h2-font-size);
+  font-size: var(--h1-font-size);
   color: var(--title-color);
   text-align: center;
   text-transform: capitalize;
@@ -179,9 +180,13 @@ input {
   color: var(--title-color);
 }
 
+.nav__link:hover {
+  color: var(--first-color)
+}
+
 @media screen and (max-width: 767px){
   .nav__menu {
-    position: fixed;
+    position:fixed;
     bottom: 0;
     left: 0;
     background-color: var(--white-color);
@@ -277,7 +282,7 @@ input {
   }
 
   .nav__icon {
-    display: none;
+    display: none !important;
   }
 
   .nav__name {
@@ -315,7 +320,7 @@ input {
   width: 100%;
   height: 90vh;
   object-fit: cover;
-  transform: scaleX(-1);
+  object-position: center;
 }
 
 .home__container {
@@ -349,12 +354,10 @@ input {
   padding: 1rem 2rem;
   font-weight: var(--font-semi-bold);
   transition: .3s;
-  border-radius: 4px;
 }
 
 .button:hover {
   background-color: var(--first-color-alt);
-  color: var(--white-color);
 }
 
 /*---------------------------------------------*/
