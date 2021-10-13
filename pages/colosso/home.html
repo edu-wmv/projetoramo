@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
 
   <link rel="stylesheet" href="colosso_home.css" type="text/css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
 
 </head>
@@ -76,13 +77,45 @@
       </div>
     </section>
 
-    <section class="container section section__height" id="pesquisas">
-      <h2 class="section__title">Pesquisas</h2>
-    </section>
+    <div class="row main__section">
+      <div class="col-md-8 mb-5 pesquisas" id="pesquisas">
+        <h2 class="section__title">Pesquisas</h2>
 
-    <section class="container section section__height" id="noticias">
-      <h2 class="section__title">Noticias</h2>
-    </section>
+        <div class="search_box">
+          <input type="search" class="search-item" placeholder="Pesquisar...">
+          <div class="search-button">
+            <i class="bx bx-search search__btn"></i>
+          </div>
+        </div>
+
+        <div class="pesquisas__box containerItems">
+          <a href="pesquisas/.html" class="pesquisa__link" data-search="">
+            <div class="pesquisa">
+              <span>Aluno</span>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <aside class="col-md-4 noticias" id="noticias">
+        <h2 class="section__title last_news_title">Últimas notícias</h2>
+
+        <div class="news-box">
+
+          <div class="news row g-3 g-xl-0 mb-4" onclick="window.location='noticias/noticia.html'">
+            <div class="news-image col-2 col-xl-3">
+              <img src="" alt="">
+            </div>
+            <div class="news-info col">
+              <h2 class="news_title mb-1"></h2>
+              <span class="news-description"></span>
+            </div>
+          </div>
+
+
+        </div>
+      </aside>
+    </div>
 
     <section class="container section section__height" id="galeria">
       <h2 class="section__title">Galeria</h2>
@@ -100,6 +133,15 @@
   </a>
 
   <script src="colosso.js"></script>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <script src="../../assets/js/jquery-3.6.0.min.js"></script>
+  <script src="../../assets/js/e-search.min.js"></script>
+
+  <script>
+    $('.search-item').search();
+  </script>
 
 </body>
 </html>
