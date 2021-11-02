@@ -22,6 +22,7 @@
   --biggest-font-size: 2.5rem;
   --h1-font-size: 1.5rem;
   --h2-font-size: 1.25rem;
+  --medium-font-size: 1.25rem;
   --h3-font-size: 1rem;
   --normal-font-size: .938rem;
   --small-font-size: .813rem;
@@ -52,9 +53,10 @@
 
 @media screen and (min-width: 968px) {
   :root {
-    --biggest-font-size: 4rem;
+    --biggest-font-size: 3rem;
     --h1-font-size: 2.25rem;
     --h2-font-size: 1.75rem;
+    --medium-font-size: 1.4rem;
     --h3-font-size: 1.25rem;
     --normal-font-size: 1rem;
     --small-font-size: .875rem;
@@ -129,7 +131,7 @@ input {
 }
 
 .section__title {
-  font-size: var(--h1-font-size);
+  font-size: var(--biggest-font-size);
   color: var(--title-color);
   text-align: center;
   text-transform: capitalize;
@@ -421,6 +423,7 @@ input {
 .pesquisa__link {
   text-decoration: none !important;
   transition: all .4s ease-in-out;
+  align-self: center;
 }
 
 .pesquisa__link:hover {
@@ -435,8 +438,7 @@ input {
   width: 200px;
   align-items: center;
   justify-content: center;
-  margin-right: 15px;
-  margin-bottom: 15px;
+  margin: 7px;
 }
 
 @media screen and (max-width: 767px) {
@@ -483,34 +485,39 @@ input {
 
 .main_section {
   justify-content: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .news {
   margin-left: 0;
   transition: all .3s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  width: 300px;
 }
 
 .last_news_title {
-  margin-left: -3rem;
+  font-size: var(--biggest-font-size);
 }
 
 .noticias {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
 }
 
 .news-box {
-  max-width: 90%;
+  display: flex;
+  flex-direction: row;
 }
 
 @media screen and (max-width:767px) {
   .noticias {
     width: 90vw !important;
-  }
-
-  .last_news_title {
-    margin-left: 15px;
   }
 }
 
@@ -522,14 +529,19 @@ input {
 .news-image img {
   object-fit: cover;
   height: 100%;
+  width: 100%;
 }
 
 .news-image {
   padding: 0 !important;
-  max-width: 300px;
-  height: 100px;
+  width: 300px;
+  height: 200px;
 }
 
 .news_title {
-  font-size: var(--h2-font-size);
+  font-size: var(--medium-font-size);
+}
+ 
+.news-info {
+  margin-top: 10px;
 }
