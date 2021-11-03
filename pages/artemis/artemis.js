@@ -41,3 +41,22 @@ function scrollUp(){
   }
 }
 window.addEventListener('scroll', scrollUp)
+
+/*---------------------------------------------*/
+
+var swiper = new Swiper(".mySwiper", {
+  slidesPerView: 'auto',
+  spaceBetween: 45,
+  slidesPerGroup: 1,
+  loop: true,
+  centeredSlides: true,
+  loopFillGroupWithBlank: true,
+  mousewheel: {
+    eventsTarget: '.news-box'
+  },
+  breakpoints: {
+    320: {
+      spaceBetween: 15
+    },
+  }
+});

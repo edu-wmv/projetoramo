@@ -9,6 +9,7 @@
   <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
 
   <link rel="stylesheet" href="farol_home.css" type="text/css">
 
@@ -77,8 +78,8 @@
       </div>
     </section>
 
-    <div class="row main__section">
-      <div class="col-md-8 mb-5 pesquisas" id="pesquisas">
+    <div class="main__section">
+      <section class="pesquisas" id="pesquisas">
         <h2 class="section__title">Pesquisas</h2>
 
         <div class="search_box">
@@ -110,26 +111,75 @@
             </div>
           </a>
         </div>
-      </div>
+      </section>
 
-      <aside class="col-md-4 noticias" id="noticias">
+      <div class="noticias mySwiper" id="noticias">
         <h2 class="section__title last_news_title">Últimas notícias</h2>
 
-        <div class="news-box">
+        <div class="news-box swiper-wrapper">
 
-          <div class="news row g-3 g-xl-0 mb-4" onclick="window.location='noticias/noticia.html'">
-            <div class="news-image col-2 col-xl-3">
-              <img src="" alt="">
+          <div class="news swiper-slide" onclick="window.location='https://brasil.elpais.com/cultura/2020-02-23/alexandria-recupera-o-trono-do-conhecimento.html'">
+            <div class="news-image">
+              <img src="https://imagens.brasil.elpais.com/resizer/i_zWWZFxEIAC6PaEna4wf2qrndA=/980x0/cloudfront-eu-central-1.images.arcpublishing.com/prisa/BE6NIVCORAUDEZ37XYX264L2RA.jpg" alt="">
             </div>
-            <div class="news-info col">
-              <h2 class="news_title mb-1"></h2>
-              <span class="news-description"></span>
+            <div class="news-info">
+              <h2 class="news_title">Alexandria recupera o trono do conhecimento</h2>
+              <span class="news-description">brasil.elpais.com</span>
             </div>
           </div>
 
+          <div class="news swiper-slide" onclick="window.location='https://farolblumenau.com/25-de-novembro-dia-de-santa-catarina-de-alexandria/'">
+            <div class="news-image">
+                <img src="https://i1.wp.com/farolblumenau.com/wp-content/uploads/2019/11/Pinturas-sacras-na-idade-media-de-Santa-Catarina-de-Alexandria-2.jpeg?fit=599%2C800&ssl=1" alt="">
+            </div>
+              <div class="news-info">
+                <h2 class="news_title">25 de Novembro - Dia de Santa Catarina de Alexandria</h2>
+                <span class="news-description">farolblumenau.com</span>
+              </div>
+          </div>
+
+          <div class="news swiper-slide" onclick="window.location='https://revistagalileu.globo.com/Ciencia/Arqueologia/noticia/2015/05/egito-vai-reconstruir-o-farol-de-alexandria-uma-das-sete-maravilhas-do-mundo-antigo.html'">
+            <div class="news-image">
+                <img src="https://s2.glbimg.com/vF_08y-51izf9TbZXRuGdY9rqI8=/e.glbimg.com/og/ed/f/original/2015/05/12/pharos_alexandria_fischer_von_erlach.jpg" alt="">
+            </div>
+              <div class="news-info">
+                <h2 class="news_title">Egito vai reconstruir o Farol de Alexandria, uma das sete maravilhas do mundo antigo</h2>
+                <span class="news-description">revistagalileu.globo.com</span>
+              </div>
+          </div>
+
+          <div class="news swiper-slide" onclick="window.location='http://g1.globo.com/mundo/noticia/2015/05/egito-aprova-planos-para-reerguer-farol-de-alexandria.html#:~:text=Autoridades%20eg%C3%ADpcias%20aprovaram%20os%20planos,e%20130%20metros%20de%20altura.&text=O%20Farol%20de%20Alexandria%20era,famosas%20constru%C3%A7%C3%B5es%20do%20mundo%20antigo.'">
+            <div class="news-image">
+                <img src="http://s2.glbimg.com/ruN-a0_58XOHhkX2leG8-5d0Vlk=/s.glbimg.com/jo/g1/f/original/2015/05/11/150511213130__82801460_emad.jpg" alt="">
+            </div>
+              <div class="news-info">
+                <h2 class="news_title">Egito aprova planos para reerguer Farol de Alexandria</h2>
+                <span class="news-description">g1.globo.com</span>
+              </div>
+          </div>
+
+          <div class="news swiper-slide" onclick="window.location='https://embarquenaviagem.com/2016/02/15/farol-de-alexandria-sera-reconstruido-no-egito/'">
+            <div class="news-image">
+                <img src="https://embarquenaviagem.com/wp-content/uploads/pharos_alexandria_fischer_von_erlach.jpg" alt="">
+            </div>
+              <div class="news-info">
+                <h2 class="news_title">Farol de Alexandria será reconstruído no Egito</h2>
+                <span class="news-description">embarquenaviagem.com</span>
+              </div>
+          </div>
+
+          <div class="news swiper-slide" onclick="window.location='https://www.bbc.com/portuguese/geral-54341234'">
+            <div class="news-image">
+                <img src="https://ichef.bbci.co.uk/news/800/cpsprodpb/ADD7/production/_114330544_faro-arriba.jpg" alt="">
+            </div>
+              <div class="news-info">
+                <h2 class="news_title">As 7 maravilhas do mundo antigo: quais são, quem as escolheu e o que aconteceu com elas?</h2>
+                <span class="news-description">bbc.com</span>
+              </div>
+          </div>
 
         </div>
-      </aside>
+      </div>
     </div>
 
     <section class="container section section__height" id="galeria">
@@ -147,6 +197,7 @@
     <i class='bx bx-up-arrow-alt scrollup__icon' ></i>
   </a>
 
+  <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
   <script src="farol.js"></script>
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>

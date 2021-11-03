@@ -9,6 +9,7 @@
   <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
 
   <link rel="stylesheet" href="artemis_home.css" type="text/css">
 
@@ -77,8 +78,8 @@
       </div>
     </section>
 
-    <div class="row main__section">
-      <div class="col-md-8 mb-5 pesquisas" id="pesquisas">
+    <div class="main__section">
+      <div class="pesquisas" id="pesquisas">
         <h2 class="section__title">Pesquisas</h2>
 
         <div class="search_box">
@@ -97,24 +98,43 @@
         </div>
       </div>
 
-      <aside class="col-md-4 noticias" id="noticias">
+      <div class="noticias mySwiper" id="noticias">
         <h2 class="section__title last_news_title">Últimas notícias</h2>
 
-        <div class="news-box">
+        <div class="news-box swiper-wrapper">
 
-          <div class="news row g-3 g-xl-0 mb-4" onclick="window.location='noticias/noticia.html'">
-            <div class="news-image col-2 col-xl-3">
-              <img src="" alt="">
+          <div class="news swiper-slide" onclick="window.location='https://www.bbc.com/portuguese/geral-57982686'">
+            <div class="news-image">
+              <img src="https://ichef.bbci.co.uk/news/800/cpsprodpb/4698/production/_119527081_gettyimages-463964119-1.jpg" alt="">
             </div>
-            <div class="news-info col">
-              <h2 class="news_title mb-1"></h2>
-              <span class="news-description"></span>
+            <div class="news-info">
+              <h2 class="news_title">O homem que destruiu uma das 7 maravilhas do mundo para ficar famoso</h2>
+              <span class="news-description">bbc.com</span>
             </div>
           </div>
 
+          <div class="news swiper-slide" onclick="window.location='https://www.portalsaofrancisco.com.br/historia-geral/templo-de-artemis/amp'">
+            <div class="news-image">
+                <img src="https://cdn.portalsaofrancisco.com.br/wp-content/uploads/2017/02/ttemplo11.jpg" alt="">
+            </div>
+              <div class="news-info">
+                <h2 class="news_title">O Templo de Artemis em Éfeso</h2>
+                <span class="news-description">portalsaofrancisco.com.br</span>
+              </div>
+          </div>
+
+          <div class="news swiper-slide" onclick="window.location='https://revistagalileu.globo.com/amp/Sociedade/noticia/2019/05/sete-maravilhas-do-mundo-antigo-sao-reconstruidas-em-fotos-3d-veja.html'">
+            <div class="news-image">
+                <img src="https://s2.glbimg.com/-MbP_-LqMTFYPUe601bTUVgxc2Y=/e.glbimg.com/og/ed/f/original/2019/05/07/templo_de_artemis.gif" alt="">
+            </div>
+              <div class="news-info">
+                <h2 class="news_title">As sete maravilhas do mundo antigo são reconstruídas em fotos 3D</h2>
+                <span class="news-description">revistagalileu.globo.com</span>
+              </div>
+          </div>
 
         </div>
-      </aside>
+      </div>
     </div>
 
     <section class="container section section__height" id="galeria">
@@ -132,6 +152,7 @@
     <i class='bx bx-up-arrow-alt scrollup__icon' ></i>
   </a>
 
+  <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
   <script src="artemis.js"></script>
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
