@@ -8,6 +8,7 @@
 
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
   <link rel="stylesheet" href="colosso_home.css" type="text/css">
 
 
@@ -75,8 +76,8 @@
       </div>
     </section>
 
-    <div class="row main__section">
-      <div class="col-md-8 mb-5 pesquisas" id="pesquisas">
+    <div class="main__section">
+      <section class="pesquisas" id="pesquisas">
         <h2 class="section__title">Pesquisas</h2>
 
         <div class="search_box">
@@ -118,26 +119,125 @@
             </div>
           </a>
         </div>
-      </div>
+      </section>
 
-      <aside class="col-md-4 noticias" id="noticias">
+      <section class="noticias mySwiper section" id="noticias">
         <h2 class="section__title last_news_title">Últimas notícias</h2>
 
-        <div class="news-box">
+        <div class="news-box swiper-wrapper" id="news-wrapper">
 
-          <div class="news row g-3 g-xl-0 mb-4" onclick="window.location='noticias/noticia.html'">
-            <div class="news-image col-2 col-xl-3">
-              <img src="" alt="">
+          <div class="news swiper-slide" onclick="window.location='https://aventurasnahistoria.uol.com.br/noticias/almanaque/uma-tradicional-camponesa-arabe-real-origem-da-estatua-da-liberdade.phtml'">
+            <div class="news-image">
+              <img src="https://aventurasnahistoria.uol.com.br/media/_versions/curiosidades/estatua_da_liberdade_widelg.jpg" alt="">
             </div>
-            <div class="news-info col">
-              <h2 class="news_title mb-1"></h2>
-              <span class="news-description"></span>
+            <div class="news-info">
+              <h2 class="news_title">Uma Tradicional Camponesa Árabe: A real origem da Estátua da Liberdade</h2>
+              <span class="news-description">aventurasnahistoria.uol.com.br</span>
             </div>
           </div>
 
+          <div class="news swiper-slide" onclick="window.location='https://m.folha.uol.com.br/turismo/2016/01/1726976-grupo-quer-reconstruir-maravilha-do-mundo-5-vezes-maior-que-a-original.shtml'">
+            <div class="news-image">
+                <img src="http://f.i.uol.com.br/folha/turismo/images/16007346.jpeg" alt="" style="object-position: top;">
+            </div>
+              <div class="news-info">
+                <h2 class="news_title">Grupo quer reconstruir 'maravilha do mundo' 5 vezes maior que a original</h2>
+                <span class="news-description">folha.uol.com.br</span>
+              </div>
+          </div>
+
+          <div class="news swiper-slide" onclick="window.location='https://revistagalileu.globo.com/Cultura/noticia/2015/11/novo-colosso-de-rodes-quer-ser-o-marco-megalomaniaco-da-grecia-pos-crise.html'">
+            <div class="news-image">
+                <img src="https://s2.glbimg.com/gMminaM6bazcXpEW_MZXLCh3soU=/e.glbimg.com/og/ed/f/original/2015/11/04/novo_colosso.png" alt="">
+            </div>
+              <div class="news-info">
+                <h2 class="news_title">Novo Colosso de Rodes quer ser o marco megalomaníaco da Grécia pós-crise</h2>
+                <span class="news-description">revistagalileu.globo.com</span>
+              </div>
+          </div>
+
+          <div class="news swiper-slide" onclick="window.location='https://delphipages.live/pt/companheiro/casa/companheiro/why-have-there-been-plans-to-build-a-new-colossus-of-rhodes'">
+            <div class="news-image">
+                <img src="https://cdn.britannica.com/66/168966-131-52E8A827.jpg" alt="">
+            </div>
+              <div class="news-info">
+                <h2 class="news_title">Por que existem planos para construir um novo colosso de Rodes?</h2>
+                <span class="news-description">delphipages.live</span>
+              </div>
+          </div>
+
+          <div class="news swiper-slide" onclick="window.location='http://g1.globo.com/Noticias/Ciencia/0,,MUL416200-5603,00-ALEMA+DIZ+TER+ACHADO+LUGAR+ONDE+FICAVA+O+MITICO+COLOSSO+DE+RODES.html'">
+            <div class="news-image">
+                <img src="http://g1.globo.com/Noticias/Ciencia/foto/0,,14467194,00.jpg" alt="">
+            </div>
+              <div class="news-info">
+                <h2 class="news_title">Alemã diz ter achado lugar onde ficava o mítico Colosso de Rodes</h2>
+                <span class="news-description">g1.globo.com</span>
+              </div>
+          </div>
+
+          <div class="news swiper-slide" onclick="window.location='https://www1.folha.uol.com.br/fol/cult/ult17042000135.htm'">
+            <div class="news-image">
+                <img src="https://s2.glbimg.com/dBRaSZbR7WES0MzCm5NmqVN5zAA=/512x320/smart/e.glbimg.com/og/ed/f/original/2015/11/04/novo_colosso.png" alt="">
+            </div>
+              <div class="news-info">
+                <h2 class="news_title">Colosso de Rodes será reconstruído por artistas</h2>
+                <span class="news-description">folha.uol.com.br</span>
+              </div>
+          </div>
+
+          <div class="news swiper-slide" onclick="window.location='https://www.tsf.pt/sociedade/ciencia-e-tecnologia/amp/o-novo-colosso-de-rodes-tera-122-metros-de-altura-4871237.html'">
+            <div class="news-image">
+                <img src="https://s2.glbimg.com/dBRaSZbR7WES0MzCm5NmqVN5zAA=/512x320/smart/e.glbimg.com/og/ed/f/original/2015/11/04/novo_colosso.png" alt="">
+            </div>
+              <div class="news-info">
+                <h2 class="news_title">O novo Colosso de Rodes terá 122 metros de altura</h2>
+                <span class="news-description">tsf.pt</span>
+              </div>
+          </div>
+
+          <div class="news swiper-slide" onclick="window.location='https://www.revistaplaneta.com.br/veja-como-seriam-as-sete-maravilhas-do-mundo/'">
+            <div class="news-image">
+                <img src="https://www.revistaplaneta.com.br/wp-content/uploads/sites/3/2019/05/colosso_grande-696x367.jpg" alt="">
+            </div>
+              <div class="news-info">
+                <h2 class="news_title">Veja como seriam as Sete Maravilhas do Mundo</h2>
+                <span class="news-description">revistaplaneta.com.br</span>
+              </div>
+          </div>
+
+          <div class="news swiper-slide" onclick="window.location='https://aventurasnahistoria.uol.com.br/noticias/almanaque/a-vida-breve-do-impressionante-colosso-de-rodes-uma-das-maravilhas-da-antiguidade.phtml'">
+            <div class="news-image">
+                <img src="https://aventurasnahistoria.uol.com.br/media/_versions/arte/redndndn_widelg.jpg" alt="">
+            </div>
+              <div class="news-info">
+                <h2 class="news_title">A vida breve do impressionanre Colosso de Rodes, um das sete maravilhas da antiguidade</h2>
+                <span class="news-description">aventurasnahistoria.uol.com.br</span>
+              </div>
+          </div>
+
+          <div class="news swiper-slide" onclick="window.location='https://jornalissimo.com/curiosidades/10-curiosidades-sobre-o-colosso-de-rodes/'">
+            <div class="news-image">
+                <img src="https://jornalissimo.com/wp-content/uploads/2015/11/Colosso-de-Rodes.jpg" alt="">
+            </div>
+              <div class="news-info">
+                <h2 class="news_title">10 Curiosidades sobre o Colosso de Rodes</h2>
+                <span class="news-description">jornalissimo.com</span>
+              </div>
+          </div>
+
+          <div class="news swiper-slide" onclick="window.location='https://revistagalileu.globo.com/Sociedade/noticia/2019/05/sete-maravilhas-do-mundo-antigo-sao-reconstruidas-em-fotos-3d-veja.html'">
+            <div class="news-image">
+                <img src="https://s2.glbimg.com/8rv7cRdg6uyT_v0_Scv4Bcgt0Lw=/e.glbimg.com/og/ed/f/original/2019/05/07/sem_titulo.png" alt="">
+            </div>
+              <div class="news-info">
+                <h2 class="news_title">As sete maravilhas do mundo antigo são reconstruídas em fotos 3D</h2>
+                <span class="news-description">revistagalileu.globo.com</span>
+              </div>
+          </div>
 
         </div>
-      </aside>
+      </section>
     </div>
 
     <section class="container section section__height" id="galeria">
@@ -155,6 +255,7 @@
     <i class='bx bx-up-arrow-alt scrollup__icon' ></i>
   </a>
 
+  <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
   <script src="colosso.js"></script>
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
