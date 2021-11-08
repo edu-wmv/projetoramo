@@ -292,7 +292,7 @@
           e.stopPropagation();
         });
       
-        $('body').on('click', '.blog-article, .article-container .button', function() {
+        $('body').on('click', 'main .home .button', function() {
           $('.overlay').show();
           $('.video')[0].contentWindow.postMessage('{"event":"command","func":"' + 'playVideo' + '","args":""}', '*');
         });
