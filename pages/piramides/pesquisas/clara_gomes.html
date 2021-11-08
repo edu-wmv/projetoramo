@@ -85,6 +85,11 @@
         <img src="https://i.ibb.co/SNPLnh8/clara-gomes.jpg" alt="Imagem da pesquisa">
       </div>
 
+      <button class="button">
+        <i class='bx bx-play'></i>
+        <span>Vídeo do aluno</span>
+      </button>
+
       <div class="article-text">
         <div class="article-text-box">
           <p>As Pirâmides de Gizé são estruturas monumentais construídas em pedra. Possuem uma base retangular e quatro faces triangulares que convergem para uma vértice. Estas três majestosas pirâmides foram construídas como tumbas reais para o rei Kufu (ou Queóps), Quéfren e Menkaure (ou Miquerinos) - pai, filho e neto. A maior delas, com 160 m de altura (49 andares), é chamada Grande Pirâmide, e foi construída cerca de 2550 a.C. para Kufu, no auge do antigo reinado do Egito e estão localizadas na cidade de Gizé. A 18 quilômetros do Cairo. Elas são as únicas das antigas maravilhas que sobreviveram ao tempo. Sua construção é uma homenagem ao faraó que comandava o Egito naquela época. Entre as pirâmides do Egito, a tumba representa a menor estrutura. Também localizada na península de Gizé, ela foi construída para abrigar o corpo de Miquerinos, neto do faraó Queóps e filho de Quéfren.</p>
@@ -103,11 +108,42 @@
 
   </section>
 
+  <div class="overlay">
+    <div class="videoBox" id="videobox">
+      <i class='bx bxs-x-circle close'></i>
+      <iframe class="video" src="https://www.youtube.com/embed/?autoplay=1&enablejsapi=1&controls=0" frameborder="0" allow="autoplay"></iframe>
+    </div>
+  </div>
+
   <a href="#" class="scrollup" id="scroll-up">
     <i class='bx bx-up-arrow-alt scrollup__icon' ></i>
   </a>
 
   <script src="article_script.js"></script>
+  <script src="../../../assets/js/jquery-3.6.0.min.js"></script>
+  <script>
+    $(function() {
+      $(document).on('keyup',function(e) {
+        if (e.keyCode == 27) {
+          $('.overlay').hide();
+        }
+      }); 
+    
+      $('body').on('click','.overlay, .close', function() {
+        $('.overlay').hide();
+        $('.video')[0].contentWindow.postMessage('{"event":"command","func":"' + 'stopVideo' + '","args":""}', '*');
+      });
+
+      $('body').on('click','.videoBox', function(e) {
+        e.stopPropagation();
+      });
+    
+      $('body').on('click', '.blog-article, .article-container .button', function() {
+        $('.overlay').show();
+        $('.video')[0].contentWindow.postMessage('{"event":"command","func":"' + 'playVideo' + '","args":""}', '*');
+      });
+    });
+  </script>
   
 </body>
 </html>

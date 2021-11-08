@@ -85,6 +85,11 @@
         <img src="https://i.ibb.co/cxmynmN/luana-gomes.jpg" alt="Imagem da pesquisa">
       </div>
 
+      <button class="button">
+        <i class='bx bx-play'></i>
+        <span>Vídeo do aluno</span>
+      </button>
+
       <div class="article-text">
         <div class="article-text-box">
           <p>De todas as maravilhas da Antiguidade, a Grande Pirâmide de Gizé, localizada no Egito, é a única que pode ainda ser contemplada pelos turistas da atualidade. Sendo prova da veneração que os egípcios mantinham pelo faraó, esse monumento questiona muitos dos preconceitos que costumam ligar o Mundo Antigo às ideias de “simplicidade” e “incipiência”. Construído por volta de 2550 a.C., o suntuoso monumento de 137 metros de altura contou com o trabalho de 100 mil homens ao longo de 20 anos</p>
@@ -119,11 +124,42 @@
 
   </section>
 
+  <div class="overlay">
+    <div class="videoBox" id="videobox">
+      <i class='bx bxs-x-circle close'></i>
+      <iframe class="video" src="https://www.youtube.com/embed/?autoplay=1&enablejsapi=1&controls=0" frameborder="0" allow="autoplay"></iframe>
+    </div>
+  </div>
+
   <a href="#" class="scrollup" id="scroll-up">
     <i class='bx bx-up-arrow-alt scrollup__icon' ></i>
   </a>
 
   <script src="article_script.js"></script>
+  <script src="../../../assets/js/jquery-3.6.0.min.js"></script>
+  <script>
+    $(function() {
+      $(document).on('keyup',function(e) {
+        if (e.keyCode == 27) {
+          $('.overlay').hide();
+        }
+      }); 
+    
+      $('body').on('click','.overlay, .close', function() {
+        $('.overlay').hide();
+        $('.video')[0].contentWindow.postMessage('{"event":"command","func":"' + 'stopVideo' + '","args":""}', '*');
+      });
+
+      $('body').on('click','.videoBox', function(e) {
+        e.stopPropagation();
+      });
+    
+      $('body').on('click', '.blog-article, .article-container .button', function() {
+        $('.overlay').show();
+        $('.video')[0].contentWindow.postMessage('{"event":"command","func":"' + 'playVideo' + '","args":""}', '*');
+      });
+    });
+  </script>
   
 </body>
 </html>

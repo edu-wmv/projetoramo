@@ -85,6 +85,11 @@
         <img src="https://i.ibb.co/ZL0sFKy/pyramid-of-giza-full.jpg" alt="Imagem da pesquisa">
       </div>
 
+      <button class="button">
+        <i class='bx bx-play'></i>
+        <span>Vídeo do aluno</span>
+      </button>
+
       <div class="article-text">
         <div class="article-text-box">
           <p>As pirâmides de gizé foram construídas no ano de 2550 a.c elas são três e a maior chega a medir cerca de 146,6m de altura o que equivale a 49 andares essas pirâmides são tumbas que foram criadas para os Quéops, Quéfren e Miquerinos - pai, filho, neto.</p>
@@ -131,11 +136,42 @@
 
   </section>
 
+  <div class="overlay">
+    <div class="videoBox" id="videobox">
+      <i class='bx bxs-x-circle close'></i>
+      <iframe class="video" src="https://www.youtube.com/embed/?autoplay=1&enablejsapi=1&controls=0" frameborder="0" allow="autoplay"></iframe>
+    </div>
+  </div>
+
   <a href="#" class="scrollup" id="scroll-up">
     <i class='bx bx-up-arrow-alt scrollup__icon' ></i>
   </a>
 
   <script src="article_script.js"></script>
+  <script src="../../../assets/js/jquery-3.6.0.min.js"></script>
+  <script>
+    $(function() {
+      $(document).on('keyup',function(e) {
+        if (e.keyCode == 27) {
+          $('.overlay').hide();
+        }
+      }); 
+    
+      $('body').on('click','.overlay, .close', function() {
+        $('.overlay').hide();
+        $('.video')[0].contentWindow.postMessage('{"event":"command","func":"' + 'stopVideo' + '","args":""}', '*');
+      });
+
+      $('body').on('click','.videoBox', function(e) {
+        e.stopPropagation();
+      });
+    
+      $('body').on('click', '.blog-article, .article-container .button', function() {
+        $('.overlay').show();
+        $('.video')[0].contentWindow.postMessage('{"event":"command","func":"' + 'playVideo' + '","args":""}', '*');
+      });
+    });
+  </script>
   
 </body>
 </html>
