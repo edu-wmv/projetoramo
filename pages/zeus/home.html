@@ -107,6 +107,12 @@
               <span>ana clara</span>
             </div>
           </a>
+
+          <a href="pesquisas/arthur.html" class="pesquisa__link" data-search="arthur artur">
+            <div class="pesquisa">
+              <span>arthur</span>
+            </div>
+          </a>
         </div>
       </div>
 
@@ -201,7 +207,7 @@
       e.stopPropagation();
     });
   
-    $('body').on('click', '.blog-article, .article-container .button', function() {
+    $('body').on('click', 'main .home .button', function() {
       $('.overlay').show();
       $('.video')[0].contentWindow.postMessage('{"event":"command","func":"' + 'playVideo' + '","args":""}', '*');
     });

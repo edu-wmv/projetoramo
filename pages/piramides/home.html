@@ -313,6 +313,13 @@
     </section>
 </div>
 
+<div class="overlay">
+  <div class="videoBox" id="videobox">
+    <i class='bx bxs-x-circle close-video'></i>
+    <iframe class="video" src="https://www.youtube.com/embed/gU3UOJleQqw?autoplay=1&enablejsapi=1&controls=0" frameborder="0" allow="autoplay"></iframe>
+  </div>
+</div>
+
 
   </main>
 
@@ -333,6 +340,30 @@
   <script>
     $('.search-item').search();
   </script>
+
+<script>
+  $(function() {
+    $(document).on('keyup',function(e) {
+      if (e.keyCode == 27) {
+        $('.overlay').hide();
+      }
+    }); 
+  
+    $('body').on('click','.overlay, .close', function() {
+      $('.overlay').hide();
+      $('.video')[0].contentWindow.postMessage('{"event":"command","func":"' + 'stopVideo' + '","args":""}', '*');
+    });
+
+    $('body').on('click','.videoBox', function(e) {
+      e.stopPropagation();
+    });
+  
+    $('body').on('click', 'main .home .button', function() {
+      $('.overlay').show();
+      $('.video')[0].contentWindow.postMessage('{"event":"command","func":"' + 'playVideo' + '","args":""}', '*');
+    });
+  });
+</script>
 
 </body>
 </html>
