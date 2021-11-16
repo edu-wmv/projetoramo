@@ -508,6 +508,7 @@ input {
   align-items: center;
   margin-top: 2rem;
   margin-bottom: 2rem;
+  width: 80%;
 }
 
 .news-box {
@@ -606,3 +607,66 @@ input {
   }
 }
 
+/*---------------------------------------------*/
+
+.masonry {
+  columns: 4;
+  column-gap: 16px;
+}
+
+@media screen and (max-width: 1200px) {
+  .masonry {
+    columns: 3;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .masonry {
+    columns: 2;
+  }
+}
+
+.grid-images {
+  display: inline-flex;
+  flex-direction: column;
+  margin-bottom: 16px;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+}
+
+.grid-images img {
+  width: 100%;
+  border-radius: 3px;
+  transition: all 0.25s ease-in-out;
+}
+
+.grid-images img:hover {
+  transform: scale(1.025);
+  filter: grayscale(0.3) brightness(50%) opacity(90%);
+}
+
+.student-name {
+  display: none;
+  position: absolute;
+  color: black;
+  font-size: var(--h1-font-size);
+  font-weight: var(--font-semi-bold);
+  transition: all 0.25s ease-in-out;
+}
+
+.grid-images a:hover + .student-name, 
+.student-name:hover {
+  display: block;
+  transform: scale(1.01)
+}
+
+#galeria {
+  width: 80%;
+}
+
+@media screen and (max-width: 768px) {
+  #galeria {
+    width: 95%;
+  }
+}
