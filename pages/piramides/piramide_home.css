@@ -631,7 +631,6 @@ input {
   flex-direction: column;
   margin-bottom: 16px;
   position: relative;
-  align-items: center;
   justify-content: center;
 }
 
@@ -647,18 +646,17 @@ input {
 }
 
 .student-name {
-  display: none;
-  position: absolute;
+  display: block;
   color: black;
-  font-size: var(--h1-font-size);
+  font-size: var(--h3-font-size);
   font-weight: var(--font-semi-bold);
   transition: all 0.25s ease-in-out;
+  line-height: 30px;
 }
 
 .grid-images a:hover + .student-name, 
 .student-name:hover {
   display: block;
-  transform: scale(1.01)
 }
 
 #galeria {
