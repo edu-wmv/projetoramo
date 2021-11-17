@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
+  <link rel="stylesheet" href="/assets/css/lightbox.min.css">
 
   <link rel="stylesheet" href="zeus_home.css" type="text/css">
 
@@ -79,7 +80,7 @@
     </section>
 
     <div class="main__section">
-      <div class="pesquisas" id="pesquisas">
+      <section class="pesquisas" id="pesquisas">
         <h2 class="section__title">Pesquisas</h2>
 
         <div class="search_box">
@@ -90,9 +91,9 @@
         </div>
 
         <div class="pesquisas__box containerItems">
-          <a href="pesquisas/adriele.html" class="pesquisa__link" data-search="adriele">
+          <a href="pesquisas/adriele.html" class="pesquisa__link" data-search="adrielle">
             <div class="pesquisa">
-              <span>adriele</span>
+              <span>adrielle</span>
             </div>
           </a>
 
@@ -114,7 +115,7 @@
             </div>
           </a>
         </div>
-      </div>
+      </section>
 
       <section class="noticias mySwiper" id="noticias">
         <h2 class="section__title last_news_title">Últimas notícias</h2>
@@ -154,8 +155,20 @@
         </div>
       </section>
 
-      <section class="container section section__height" id="galeria">
-        <h2 class="section__title">Galeria</h2>
+      <section class="section" id="galeria">
+        <h2 class="section__title">Galeria de Arte</h2>
+
+        <div class="masonry">
+          <div class="grid-images">
+            <a href="https://i.ibb.co/LSwPR9v/Ana-Carol-Est-tua-de-Zeus.jpg" data-lightbox="gallery" data-title="Ana Carol" ><img src="https://i.ibb.co/LSwPR9v/Ana-Carol-Est-tua-de-Zeus.jpg" alt=""></a>
+            <span class="student-name">Ana Carol</span>
+          </div>
+
+          <div class="grid-images">
+            <a href="https://i.ibb.co/CWc6R1b/Adrielle-Santos-Est-tua-de-Zeus.jpg" data-lightbox="gallery" data-title="Adrielle Santos" ><img src="https://i.ibb.co/CWc6R1b/Adrielle-Santos-Est-tua-de-Zeus.jpg" alt=""></a>
+            <span class="student-name">Adrielle Santos</span>
+          </div>
+        </div>
       </section>
   
       <section class="container section section__height" id="cinema">
@@ -185,6 +198,14 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
   <script src="../../assets/js/jquery-3.6.0.min.js"></script>
   <script src="../../assets/js/e-search.min.js"></script>
+  <script src="/assets/js/lightbox-plus-jquery.min.js"></script>
+
+  <script>
+    lightbox.option({
+    'showImageNumberLabel': false,
+    'alwaysShowNavOnTouchDevices': true
+    })
+  </script>
 
   <script>
     $('.search-item').search();

@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
+  <link rel="stylesheet" href="/assets/css/lightbox.min.css">
 
   <link rel="stylesheet" href="farol_home.css" type="text/css">
 
@@ -181,8 +182,30 @@
         </div>
       </section>
 
-      <section class="container section section__height" id="galeria">
-        <h2 class="section__title">Galeria</h2>
+      <section class="container section" id="galeria">
+        <h2 class="section__title">Galeria de Arte</h2>
+
+        <div class="masonry">
+          <div class="grid-images">
+            <a href="https://i.ibb.co/FKbhfrx/Guilherme-Lefundes.jpg" data-lightbox="gallery" data-title="Guilherme Lefundes" ><img src="https://i.ibb.co/FKbhfrx/Guilherme-Lefundes.jpg" alt=""></a>
+            <span class="student-name">Guilherme Lefundes</span>
+          </div>
+
+          <div class="grid-images">
+            <a href="https://i.ibb.co/D49tyf3/Gisele-Costa.jpg" data-lightbox="gallery" data-title="Gisele Costa" ><img src="https://i.ibb.co/D49tyf3/Gisele-Costa.jpg" alt=""></a>
+            <span class="student-name">Gisele Costa</span>
+          </div>
+
+          <div class="grid-images">
+            <a href="https://i.ibb.co/qdr4FcB/Jeanne-Vitoria.png" data-lightbox="gallery" data-title="Jeanne Vitória" ><img src="https://i.ibb.co/qdr4FcB/Jeanne-Vitoria.png" alt=""></a>
+            <span class="student-name">Jeanne Vitória</span>
+          </div>
+
+          <div class="grid-images">
+            <a href="https://i.ibb.co/MCy3Jdk/Debora-Kelly.jpg" data-lightbox="gallery" data-title="Debora Kelly" ><img src="https://i.ibb.co/MCy3Jdk/Debora-Kelly.jpg" alt=""></a>
+            <span class="student-name">Debora Kelly</span>
+          </div>
+        </div>
       </section>
   
       <section class="container section section__height" id="cinema">
@@ -211,6 +234,42 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
   <script src="../../assets/js/jquery-3.6.0.min.js"></script>
   <script src="../../assets/js/e-search.min.js"></script>
+  <script src="/assets/js/lightbox-plus-jquery.min.js"></script>
+
+  <script>
+    lightbox.option({
+    'showImageNumberLabel': false,
+    'alwaysShowNavOnTouchDevices': true
+    })
+  </script>
+
+<script>
+  $(function() {
+
+$(document).ready(function() {
+  $("div.masonry").randomize("div.grid-images");
+});
+
+});
+
+(function($) {
+
+$.fn.randomize = function(childElem) {
+return this.each(function() {
+    var $this = $(this);
+    var elems = $this.children(childElem);
+
+    elems.sort(function() { return (Math.round(Math.random())-0.5); });  
+
+    $this.remove(childElem);  
+
+    for(var i=0; i < elems.length; i++)
+      $this.append(elems[i]);      
+
+});    
+}
+})(jQuery);
+</script>
 
   <script>
     $('.search-item').search();

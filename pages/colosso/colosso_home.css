@@ -605,3 +605,66 @@ input {
     top: 45%;
   }
 }
+
+/*---------------------------------------------*/
+
+.masonry {
+  columns: 3;
+  column-gap: 16px;
+}
+
+@media screen and (max-width: 992px) {
+  .masonry {
+    columns: 2;
+  }
+}
+
+.grid-images {
+  display: inline-flex;
+  flex-direction: column;
+  margin-bottom: 16px;
+  position: relative;
+  justify-content: center;
+}
+
+@media screen and (max-width: 767px) {
+  .grid-images {
+    margin-bottom: 6px;
+  }
+}
+
+.grid-images img {
+  width: 100%;
+  border-radius: 3px;
+  transition: all 0.25s ease-in-out;
+}
+
+.grid-images img:hover {
+  transform: scale(1.025);
+  filter: grayscale(0.3) brightness(50%) opacity(90%);
+}
+
+.student-name {
+  display: block;
+  color: black;
+  font-size: var(--h3-font-size);
+  font-weight: var(--font-semi-bold);
+  transition: all 0.25s ease-in-out;
+  line-height: 30px;
+}
+
+.grid-images a:hover + .student-name, 
+.student-name:hover {
+  display: block;
+}
+
+#galeria {
+  width: 80%;
+}
+
+@media screen and (max-width: 768px) {
+  #galeria {
+    width: 95%;
+  }
+}
+

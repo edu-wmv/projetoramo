@@ -609,3 +609,66 @@ input {
   }
 }
 
+/*---------------------------------------------*/
+
+.masonry {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.grid-images {
+  display: inline-flex;
+  flex-direction: column;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+}
+
+@media screen and (max-width: 767px) {
+  .grid-images {
+    margin-bottom: 6px;
+  }
+}
+
+.grid-images a {
+  display: flex;
+  justify-content: center;
+}
+
+.grid-images img {
+  width: 70%;
+  border-radius: 3px;
+  transition: all 0.25s ease-in-out;
+}
+
+.grid-images img:hover {
+  transform: scale(1.025);
+  filter: grayscale(0.3) brightness(50%) opacity(90%);
+}
+
+.student-name {
+  display: block;
+  color: black;
+  font-size: var(--h3-font-size);
+  font-weight: var(--font-semi-bold);
+  transition: all 0.25s ease-in-out;
+  line-height: 30px;
+}
+
+.grid-images a:hover + .student-name, 
+.student-name:hover {
+  display: block;
+}
+
+#galeria {
+  width: 80%;
+}
+
+@media screen and (max-width: 768px) {
+  #galeria {
+    width: 95%;
+  }
+}
+
+
+

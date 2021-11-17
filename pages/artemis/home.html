@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
+  <link rel="stylesheet" href="/assets/css/lightbox.min.css">
 
   <link rel="stylesheet" href="artemis_home.css" type="text/css">
 
@@ -136,8 +137,37 @@
         </div>
       </section>
 
-      <section class="container section section__height" id="galeria">
-        <h2 class="section__title">Galeria</h2>
+      <section class="container section" id="galeria">
+        <h2 class="section__title">Galeria de Arte</h2>
+
+        <div class="masonry">
+
+          <div class="grid-images">
+            <a href="https://i.ibb.co/ZX1L1D0/david-William-Templo-de-Artemis.jpg" data-lightbox="gallery" data-title="David William" ><img src="https://i.ibb.co/ZX1L1D0/david-William-Templo-de-Artemis.jpg" alt=""></a>
+            <span class="student-name">David William</span>
+          </div>
+
+          <div class="grid-images">
+            <a href="https://i.ibb.co/YNVfNmc/Wesley-Candeias-Templo-de-Artemis.jpg" data-lightbox="gallery" data-title="Wesley Candeias" ><img src="https://i.ibb.co/YNVfNmc/Wesley-Candeias-Templo-de-Artemis.jpg" alt=""></a>
+            <span class="student-name">Wesley Candeias</span>
+          </div>
+
+          <div class="grid-images">
+            <a href="https://i.ibb.co/tBWQ0M1/Samily-Deir-Templo-de-Artemis.jpg" data-lightbox="gallery" data-title="Samily Deirós" ><img src="https://i.ibb.co/tBWQ0M1/Samily-Deir-Templo-de-Artemis.jpg" alt=""></a>
+            <span class="student-name">Samily Deirós</span>
+          </div>
+
+          <div class="grid-images">
+            <a href="https://i.ibb.co/KhCh3Zm/Maiala-Barbosa-Templo-de-Artemis.jpg" data-lightbox="gallery" data-title="Maiala Barbosa" ><img src="https://i.ibb.co/KhCh3Zm/Maiala-Barbosa-Templo-de-Artemis.jpg" alt=""></a>
+            <span class="student-name">Maiala Barbosa</span>
+          </div>
+
+          <div class="grid-images">
+            <a href="https://i.ibb.co/PGd3vDH/Luigi-Da-Cruz-Templo-de-Artemis.png" data-lightbox="gallery" data-title="Luigi da Cruz" ><img src="https://i.ibb.co/PGd3vDH/Luigi-Da-Cruz-Templo-de-Artemis.png" alt=""></a>
+            <span class="student-name">Luigi da Cruz</span>
+          </div>
+
+        </div>
       </section>
   
       <section class="container section section__height" id="cinema">
@@ -167,6 +197,14 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
   <script src="../../assets/js/jquery-3.6.0.min.js"></script>
   <script src="../../assets/js/e-search.min.js"></script>
+  <script src="/assets/js/lightbox-plus-jquery.min.js"></script>
+
+  <script>
+    lightbox.option({
+    'showImageNumberLabel': false,
+    'alwaysShowNavOnTouchDevices': true
+    })
+  </script>
 
   <script>
     $('.search-item').search();
@@ -194,6 +232,34 @@
       $('.video')[0].contentWindow.postMessage('{"event":"command","func":"' + 'playVideo' + '","args":""}', '*');
     });
   });
+</script>
+
+<script>
+  $(function() {
+
+$(document).ready(function() {
+  $("div.masonry").randomize("div.grid-images");
+});
+
+});
+
+(function($) {
+
+$.fn.randomize = function(childElem) {
+return this.each(function() {
+    var $this = $(this);
+    var elems = $this.children(childElem);
+
+    elems.sort(function() { return (Math.round(Math.random())-0.5); });  
+
+    $this.remove(childElem);  
+
+    for(var i=0; i < elems.length; i++)
+      $this.append(elems[i]);      
+
+});    
+}
+})(jQuery);
 </script>
 
 </body>
