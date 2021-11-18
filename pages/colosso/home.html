@@ -10,6 +10,8 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
   <link rel="stylesheet" href="/assets/css/lightbox.min.css">
+  <link rel="stylesheet" href="/assets/css/tobii.min.css">
+
 
   <link rel="stylesheet" href="colosso_home.css" type="text/css">
 
@@ -270,6 +272,11 @@
           <span class="student-name">Mayla Ribeiro</span>
         </div>
 
+        <div class="grid-images">
+          <a href="#" data-type="youtube" data-id="kctclCJ7Psc" data-height="600" data-width="400" data-controls="1" class="videoLightbox"><img src="https://i.ibb.co/qMPYkMK/Gustavo.jpg" alt=""></a>
+          <span class="student-name">Gustavo Kelvin</span>
+        </div>
+
       </div>
       </section>
 
@@ -301,8 +308,13 @@
   <script src="../../assets/js/jquery-3.6.0.min.js"></script>
   <script src="../../assets/js/e-search.min.js"></script>
   <script src="/assets/js/lightbox-plus-jquery.min.js"></script>
+  <script src="/assets/js/tobii.min.js"></script>
 
   <script>
+    const tobii = new Tobii({
+      selector: '.videoLightbox'
+    });
+
     lightbox.option({
     'showImageNumberLabel': false,
     'alwaysShowNavOnTouchDevices': true

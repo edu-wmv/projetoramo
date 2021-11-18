@@ -11,6 +11,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
   <link rel="stylesheet" href="/assets/css/lightbox.min.css">
+  <link rel="stylesheet" href="/assets/css/tobii.min.css">
 
   <link rel="stylesheet" href="farol_home.css" type="text/css">
 
@@ -205,6 +206,11 @@
             <a href="https://i.ibb.co/MCy3Jdk/Debora-Kelly.jpg" data-lightbox="gallery" data-title="Debora Kelly" ><img src="https://i.ibb.co/MCy3Jdk/Debora-Kelly.jpg" alt=""></a>
             <span class="student-name">Debora Kelly</span>
           </div>
+
+          <div class="grid-images">
+            <a href="#" data-type="youtube" data-id="D0jD-huiYTI" data-height="600" data-width="400" data-controls="1" class="videoLightbox"><img src="https://i.ibb.co/NK3fDbR/Erick.jpg" alt=""></a>
+            <span class="student-name">Erick Maia</span>
+          </div>
         </div>
       </section>
   
@@ -220,6 +226,7 @@
         <iframe class="video" src="https://www.youtube.com/embed/k7nsChWTyVk?autoplay=1&enablejsapi=1&controls=0" frameborder="0" allow="autoplay"></iframe>
       </div>
     </div>
+    
   </main>
 
   <!-------------------------------------------------->
@@ -235,8 +242,13 @@
   <script src="../../assets/js/jquery-3.6.0.min.js"></script>
   <script src="../../assets/js/e-search.min.js"></script>
   <script src="/assets/js/lightbox-plus-jquery.min.js"></script>
+  <script src="/assets/js/tobii.min.js"></script>
 
   <script>
+    const tobii = new Tobii({
+      selector: '.videoLightbox'
+    });
+
     lightbox.option({
     'showImageNumberLabel': false,
     'alwaysShowNavOnTouchDevices': true
