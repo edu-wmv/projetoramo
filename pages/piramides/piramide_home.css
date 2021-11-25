@@ -747,7 +747,7 @@ input {
 
 @media screen and (max-width:579px) {
   #auto-width .active {
-    transform: scale(1.1) translateX(62%);
+    transform: scale(1.1) translateX(58%);
     margin-right: 70px;
   }
  
