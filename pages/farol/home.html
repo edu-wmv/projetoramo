@@ -243,6 +243,40 @@
   <script src="../../assets/js/e-search.min.js"></script>
   <script src="/assets/js/lightbox-plus-jquery.min.js"></script>
   <script src="/assets/js/tobii.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.1/dist/js.cookie.js"></script>
+
+  <script>
+    $(function() {
+      $(document).ready(function() {
+        var myCookie = getCookie("show-video");
+
+        if (myCookie == null) {
+          console.log('nop')
+        } else {
+          $('.video')[0].contentWindow.postMessage('{"event":"command","func":"' + 'stopVideo' + '","args":""}', '*');
+          $('.overlay').hide();
+        }
+
+        function getCookie(name) {
+   var dc = document.cookie;
+   var prefix = name + "=";
+   var begin = dc.indexOf("; " + prefix);
+   if (begin == -1) {
+      begin = dc.indexOf(prefix);
+      if (begin != 0) return null;
+   } else {
+      begin += 2;
+      var end = document.cookie.indexOf(";", begin);
+      if (end == -1) {
+         end = dc.length;
+      }
+   }
+   return decodeURI(dc.substring(begin + prefix.length, end));
+}
+      })
+})
+
+  </script>
 
   <script>
     const tobii = new Tobii({
@@ -298,10 +332,18 @@ return this.each(function() {
     $('body').on('click','.overlay, .close-video', function() {
       $('.overlay').hide();
       $('.video')[0].contentWindow.postMessage('{"event":"command","func":"' + 'stopVideo' + '","args":""}', '*');
+      var date = new Date();
+        var minutes = 30;
+        date.setTime(date.getTime() + (minutes * 60 * 1000));
+        Cookies.set("show-video", "1", {expires: date});
     });
 
     $('body').on('click','.videoBox', function(e) {
       e.stopPropagation();
+      var date = new Date();
+        var minutes = 30;
+        date.setTime(date.getTime() + (minutes * 60 * 1000));
+        Cookies.set("show-video", "1", {expires: date});
     });
   
     $('body').on('click', 'main .home .button', function() {

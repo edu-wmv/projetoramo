@@ -557,8 +557,8 @@
         if (myCookie == null) {
           console.log('nop')
         } else {
-          $('.overlay').hide();
           $('.video')[0].contentWindow.postMessage('{"event":"command","func":"' + 'stopVideo' + '","args":""}', '*');
+          $('.overlay').hide();
         }
 
         function getCookie(name) {
