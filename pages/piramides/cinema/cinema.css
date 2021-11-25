@@ -140,7 +140,7 @@ body {
 }
 
 .movie-data strong {
-  font-size: var(--h1-font-size);
+  font-size: var(--biggest-font-size);
   text-align: center;
 }
 
@@ -187,9 +187,12 @@ body {
   }
 }
 
-@media screen and (max-width: 420px) {
+@media screen and (max-width: 425px) {
   .movie-banner {
     height: 90vh;
+  }
+  .movie-info {
+    transform: translateY(-70px)!important;
   }
 }
 
@@ -201,7 +204,24 @@ body {
 
 .watch-options {
   display: flex;
-  padding-top: 8rem;
+}
+
+@media screen and (min-width: 1024px) {
+  .watch-options {
+    padding-top: 6rem;
+  }
+}
+
+@media screen and (min-width: 968px) {
+  .watch-options {
+    padding-top: 2rem;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .watch-options {
+    padding-top: 2rem;
+  }
 }
 
 .button {
@@ -232,7 +252,11 @@ body {
 
 @media screen and (max-width: 768px) {
   .watch-options {
-    padding-top: 5rem;
+    padding-top: 2rem;
+  }
+
+  .movie-data {
+    margin-top:0;
   }
 }
 
@@ -242,7 +266,7 @@ body {
   }
 
   .movie-info {
-    transform: translateY(-40px)
+    transform: translateY(-10px);
   }
 
   .watch-options {
@@ -250,15 +274,28 @@ body {
   }
 }
 
-@media screen and (max-width: 375px){
-  .movie-info{
-    transform: translateY(0px)
-  }
-  .movie-banner {
-    height: 130vh;
+@media screen and (max-width: 375px) {
+  .movie-info {
+    transform: translateY(-60px);
   }
 }
 
+@media screen and (max-width: 320px){
+  .movie-info{
+    transform: translateY(-135px);
+  }
+  .movie-banner {
+    height: 120vh;
+  }
+}
+
+.more-info {
+  cursor: pointer;
+}
+
+.more-info:hover span {
+  text-decoration: underline;
+}
 
 .overlay {
   width: 100%;
