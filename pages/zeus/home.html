@@ -11,6 +11,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
   <link rel="stylesheet" href="/assets/css/lightbox.min.css">
+  <link type="text/css" rel="stylesheet" href="/assets/css/lightslider.min.css" />
 
   <link rel="stylesheet" href="zeus_home.css" type="text/css">
 
@@ -172,7 +173,58 @@
       </section>
   
       <section class="container section section__height" id="cinema">
-        <h2 class="section__title">Cinema</h2>
+        <h2 class="section__title">Acervo Cinematográfico</h2>
+        
+        <ul id="auto-width" class="cs-hidden">
+          <li class="item-a" onclick="window.location='cinema/grandes_mythes.html'">
+            <div class="movie-box">
+              <div class="movie-image">
+                <img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQjAOGQJQPAJJNXwMDcBAIqfxXwenJWPJTA4jFW17iQHl0qY5Y-" alt="">
+              </div>
+              <div class="movie-info">
+                <strong>Les Grandes Mythes</strong>
+                <span>Animação</span>
+              </div>
+            </div>
+          </li>
+
+          <li class="item-b" onclick="window.location='cinema/furia_de_titas.html'">
+            <div class="movie-box">
+              <div class="movie-image">
+                <img src="https://br.web.img2.acsta.net/r_512_288/medias/nmedia/18/87/31/58/19874234.jpg" alt="">
+              </div>
+              <div class="movie-info">
+                <strong>Fúria de Titãs</strong>
+                <span>Fantasia, Ação, Aventura, Histórico</span>
+              </div>
+            </div>
+          </li>
+
+          <li class="item-c" onclick="window.location='cinema/furia_de_titas_2.html'">
+            <div class="movie-box">
+              <div class="movie-image">
+                <img src="https://br.web.img3.acsta.net/c_310_420/medias/nmedia/18/89/39/66/20044639.jpg" alt="">
+              </div>
+              <div class="movie-info">
+                <strong>Fúria de Titãs 2</strong>
+                <span>Aventura, Fantasia, Ação</span>
+              </div>
+            </div>
+          </li>
+
+          <li class="item-d" onclick="window.location='cinema/sangue_de_zeus.html'">
+            <div class="movie-box">
+              <div class="movie-image">
+                <img src="https://br.web.img3.acsta.net/c_310_420/pictures/20/10/06/08/08/0779532.jpg" alt="">
+              </div>
+              <div class="movie-info">
+                <strong>O Sangue de Zeus</strong>
+                <span>Fantasia, Ação, Animação</span>
+              </div>
+            </div>
+          </li>
+
+        </ul>
       </section>
 
     </div>
@@ -200,11 +252,12 @@
   <script src="../../assets/js/e-search.min.js"></script>
   <script src="/assets/js/lightbox-plus-jquery.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.1/dist/js.cookie.js"></script>
+  <script src="/assets/js/lightslider.min.js"></script>
 
   <script>
     $(function() {
       $(document).ready(function() {
-        var myCookie = getCookie("show-video");
+        var myCookie = getCookie("show-video_zeus");
 
         if (myCookie == null) {
           console.log('nop')
@@ -250,6 +303,10 @@
     $(document).on('keyup',function(e) {
       if (e.keyCode == 27) {
         $('.overlay').hide();
+        var date = new Date();
+        var minutes = 30;
+        date.setTime(date.getTime() + (minutes * 60 * 1000));
+        Cookies.set("show-video_zeus", "1", {expires: date});
       }
     }); 
   
@@ -259,7 +316,7 @@
       var date = new Date();
         var minutes = 30;
         date.setTime(date.getTime() + (minutes * 60 * 1000));
-        Cookies.set("show-video", "1", {expires: date});
+        Cookies.set("show-video_zeus", "1", {expires: date});
     });
 
     $('body').on('click','.videoBox', function(e) {
@@ -267,7 +324,7 @@
       var date = new Date();
         var minutes = 30;
         date.setTime(date.getTime() + (minutes * 60 * 1000));
-        Cookies.set("show-video", "1", {expires: date});
+        Cookies.set("show-video_zeus", "1", {expires: date});
     });
   
     $('body').on('click', 'main .home .button', function() {
@@ -275,6 +332,28 @@
       $('.video')[0].contentWindow.postMessage('{"event":"command","func":"' + 'playVideo' + '","args":""}', '*');
     });
   });
+</script>
+
+<script>
+  $(document).ready(function() {
+  $('#auto-width').lightSlider({
+      autoWidth:true,
+      item: 1,
+      slideMove: 1,
+      slideMargin: 30,
+      keyPress: true,
+      loop: true,
+      controls: true,
+      currentPagerPosition: 'middle',
+      pager: false,
+      enableTouch:true,
+      enableDrag:true,
+      onSliderLoad: function() {
+          $('#auto-width').removeClass('cS-hidden');
+      }
+      
+  });  
+});
 </script>
 
 </body>

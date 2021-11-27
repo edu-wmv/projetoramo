@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -524,41 +524,42 @@
     </section>
 </div>
 
-<div class="overlay">
+    <div class="overlay">
   <div class="videoBox" id="videobox">
     <i class='bx bxs-x-circle close-video'></i>
-    <iframe class="video" src="https://www.youtube.com/embed/gU3UOJleQqw?autoplay=1&enablejsapi=1&controls=0" frameborder="0" allow="autoplay"></iframe>
+    <iframe class="video" src="https://www.youtube.com/embed/gU3UOJleQqw?autoplay=1&enablejsapi=1&controls=0" frameborder="0"></iframe>
   </div>
-</div>
+    </div>
 
   </main>
 
-  <!-------------------------------------------------->
-  <a href="#" class="scrollup" id="scroll-up">
-    <i class='bx bx-up-arrow-alt scrollup__icon' ></i>
-  </a>
+<!-------------------------------------------------->
+<a href="#" class="scrollup" id="scroll-up">
+  <i class='bx bx-up-arrow-alt scrollup__icon' ></i>
+</a>
 
-  <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
-  <script src="piramide.js"></script>
-  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-  <script src="../../assets/js/jquery-3.6.0.min.js"></script>
-  <script src="../../assets/js/e-search.min.js"></script>
-  <script src="/assets/js/lightbox-plus-jquery.min.js"></script>
-  <script src="/assets/js/lightslider.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.1/dist/js.cookie.js"></script>
+<script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+<script src="piramide.js"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script src="../../assets/js/jquery-3.6.0.min.js"></script>
+<script src="../../assets/js/e-search.min.js"></script>
+<script src="/assets/js/lightbox-plus-jquery.min.js"></script>
+<script src="/assets/js/lightslider.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.1/dist/js.cookie.js"></script>
 
-  <script>
+<script>
     $(function() {
       $(document).ready(function() {
-        var myCookie = getCookie("show-video");
+        var myCookie = getCookie("show-video_pyramid");
 
         if (myCookie == null) {
           console.log('nop')
         } else {
           $('.video')[0].contentWindow.postMessage('{"event":"command","func":"' + 'stopVideo' + '","args":""}', '*');
           $('.overlay').hide();
+          console.log('to aqui')
         }
 
         function getCookie(name) {
@@ -580,24 +581,29 @@
       })
 })
 
-  </script>
+</script>
 
-  <script>
+<script>
     lightbox.option({
     'showImageNumberLabel': false,
     'alwaysShowNavOnTouchDevices': true
     })
-  </script>
+</script>
 
-  <script>
+<script>
     $('.search-item').search();
-  </script>
+</script>
 
 <script>
   $(function() {
     $(document).on('keyup',function(e) {
       if (e.keyCode == 27) {
         $('.overlay').hide();
+        $('.video')[0].contentWindow.postMessage('{"event":"command","func":"' + 'stopVideo' + '","args":""}', '*');
+        var date = new Date();
+        var minutes = 30;
+        date.setTime(date.getTime() + (minutes * 60 * 1000));
+        Cookies.set("show-video_pyramid", "1", {expires: date});
       }
     }); 
   
@@ -605,13 +611,17 @@
       $('.overlay').hide();
       $('.video')[0].contentWindow.postMessage('{"event":"command","func":"' + 'stopVideo' + '","args":""}', '*');
       var date = new Date();
-        var minutes = 30;
-        date.setTime(date.getTime() + (minutes * 60 * 1000));
-        Cookies.set("show-video", "1", {expires: date});
+      var minutes = 30;
+      date.setTime(date.getTime() + (minutes * 60 * 1000));
+      Cookies.set("show-video_pyramid", "1", {expires: date});
     });
 
-    $('body').on('click','.videoBox', function(e) {
+    $('body').on('click','.videoBox', function stopVideo(e) {
       e.stopPropagation();
+      var date = new Date();
+      var minutes = 30;
+      date.setTime(date.getTime() + (minutes * 60 * 1000));
+      Cookies.set("show-video_pyramid", "1", {expires: date});
     });
   
     $('body').on('click', 'main .home .button', function() {
