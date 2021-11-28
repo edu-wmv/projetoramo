@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Game of Thrones | Cinema</title>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+
+  <link rel="stylesheet" href="../colosso_home.css" type="text/css">
+  <link rel="stylesheet" href="cinema.css">
+  <link rel="shortchut icon" type="imagex/png" href="/assets/images/cinema.ico">
+
+</head>
+<body>
+
+<header class="header" id="header">
+    <nav class="nav container">
+      <a href="/index.html" class="nav__logo">Projeto Ramo</a>
+
+      <div class="nav__menu" id="nav-menu">
+        <ul class="nav__list">
+
+          <li class="nav__item">
+            <a href="../home.html#home" class="nav__link">
+              <i class='bx bx-home-alt nav__icon'></i>                
+              <span class="nav__name">Home</span>
+            </a>
+          </li>
+
+          <li class="nav__item">
+            <a href="../home.html#pesquisas" class="nav__link">
+              <i class='bx bx-search nav__icon' ></i>
+              <span class="nav__name">Pesquisas</span>
+            </a>
+          </li>
+
+          <li class="nav__item">
+            <a href="../home.html#noticias" class="nav__link">
+              <i class='bx bx-news nav__icon' ></i>
+              <span class="nav__name">Noticias</span>
+            </a>
+          </li>
+
+          <li class="nav__item">
+            <a href="../home.html#galeria" class="nav__link">
+              <i class='bx bx-photo-album nav__icon' ></i>
+              <span class="nav__name">Galeria</span>
+            </a>
+          </li>
+
+          <li class="nav__item">
+            <a href="../home.html#cinema" class="nav__link active-link">
+              <i class='bx bx-movie nav__icon'></i>
+              <span class="nav__name">Cinema</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+</header>
+
+<div class="movie-banner">
+
+  <div class="movie-banner-img">
+    <img src="https://br.web.img3.acsta.net/r_512_288/pictures/15/04/08/09/07/370299.jpg" alt="">
+  </div>
+
+<div class="movie-info">
+
+  <div class="movie-poster">
+    <img src="https://br.web.img2.acsta.net/c_310_420/pictures/19/03/21/16/15/4239577.jpg" alt="">
+  </div>
+
+  <div class="movie-data">
+    <strong>Game of Thrones</strong>
+    <br>
+    <div class="movie-description">
+      <span>Game of Thrones conta a históra de um lugar onde uma força destruiu o equilíbrio das estações, há muito tempo. Em uma terra onde os verões podem durar vários anos e o inverno toda uma vida, as reivindicações e as forças sobrenaturais correm as portas do Reino dos Sete Reinos. A irmandade da Patrulha da Noite busca proteger o reino de cada criatura que pode vir de lá da Muralha, mas já não tem os recursos necessários para garantir a segurança de todos. Depois de um verão de dez anos, um inverno rigoroso promete chegar com um futuro mais sombrio. Enquanto isso, conspirações e rivalidades correm no jogo político pela disputa do Trono de Ferro, o símbolo do poder absoluto.</span>
+    </div>
+    <br>
+    <div class="more-info" onclick="window.location='https://www.adorocinema.com/series/serie-7157/'">
+      <span>Mais informações...</span>
+    </div>
+
+    <div class="watch-options">
+      <button class="button">
+        <i class='bx bx-play'></i>
+        <span>Trailer</span>
+      </button>
+
+      <div class="watch">
+        <span>Disponível em:</span>
+        <div class="options">
+          <a href="https://www.hbomax.com/br/pt/series/urn:hbo:series:GVU2cggagzYNJjhsJATwo&ved=2ahUKEwjP7Pjh_rn0AhWzq5UCHf9LAnQQFnoECAsQAQ&usg=AOvVaw3IwEc40keMOctioX5hYsyL" style="display: flex; align-items: center;">
+            <span class="iconify" data-icon="simple-icons:hbo" style="color: white; font-size: 3rem;"></span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<div class="overlay" style="display: none">
+  <div class="videoBox" id="videobox">
+    <i class='bx bxs-x-circle close'></i>
+    <iframe class="video" src="https://www.youtube.com/embed/1ikKwg3FHQg?enablejsapi=1&controls=0" frameborder="0" allow="autoplay"></iframe>
+  </div>
+</div>
+
+<div class="blank"></div>
+
+<a href="#" class="scrollup" id="scroll-up">
+  <i class='bx bx-up-arrow-alt scrollup__icon' ></i>
+</a>
+  
+  <script src="cinema.js"></script>
+  <script src="/assets/js/jquery-3.6.0.min.js"></script>
+  <script src="https://code.iconify.design/2/2.1.0/iconify.min.js"></script>
+  
+  <script>
+    $(function() {
+      $(document).on('keyup',function(e) {
+        if (e.keyCode == 27) {
+          $('.overlay').hide();
+        }
+      }); 
+
+      $(document).onload =  function(){
+        $('.overlay').hide();
+      }
+    
+      $('body').on('click','.overlay, .close', function() {
+        $('.overlay').hide();
+        $('.video')[0].contentWindow.postMessage('{"event":"command","func":"' + 'stopVideo' + '","args":""}', '*');
+      });
+
+      $('body').on('click','.videoBox', function(e) {
+        e.stopPropagation();
+      });
+    
+      $('body').on('click', '.movie-banner .movie-info .watch-options button', function() {
+        $('.overlay').show();
+        $('.video')[0].contentWindow.postMessage('{"event":"command","func":"' + 'playVideo' + '","args":""}', '*');
+      });
+    });
+  </script>
+
+</body>
+</html>

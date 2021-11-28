@@ -2,20 +2,20 @@
 
 :root {
 
-  --hue-color: 39;
+  --hue-color: ;
 
-  --first-color: hsl(39, 75%, 56%);
-  --first-color-second: hsl(39, 75%, 56%);
-  --first-color-alt: hsl(39, 75%, 49%);
-  --title-color: hsl(39, 75%, 52%);
-  --text-color: hsl(39, 24%, 42%);
-  --text-color-light: hsl(39, 8%, 60%);
-  --input-color: hsl(39, 24%, 97%);
-  --body-color: hsl(36, 100%, 98%);
+  --first-color: hsl(var(--hue-color), 35%, 56%);
+  --first-color-second: hsl(var(--hue-color), 35%, 56%);
+  --first-color-alt: hsl(var(--hue-color), 75%, 49%);
+  --title-color: hsl(var(--hue-color), 55%, 22%);
+  --text-color: hsl(var(--hue-color), 24%, 42%);
+  --text-color-light: hsl(var(--hue-color), 8%, 60%);
+  --input-color: hsl(var(--hue-color), 24%, 97%);
+  --body-color: hsl(var(--hue-color), 100%, 99%);
   --white-color: #FFF;
-  --scroll-bar-color: hsl(39, 12%, 90%);
-  --scroll-thumb-color: hsl(39, 15%, 75%);
-  --selection-color: hsl(39, 97%, 81%);
+  --scroll-bar-color: hsl(var(--hue-color), 12%, 90%);
+  --scroll-thumb-color: hsl(var(--hue-color), 15%, 75%);
+  --selection-color: hsl(var(--hue-color), 40%, 69%);
 
   --body-font: 'Open Sans', sans-serif;
   --title-font: 'Raleway', sans-serif;
@@ -193,7 +193,7 @@ body {
     height: 90vh;
   }
   .movie-info {
-    transform: translateY(-70px)!important;
+    /* transform: translateY(-70px)!important; */
   }
 }
 
@@ -264,6 +264,7 @@ body {
   .watch {
     margin-left: 0;
     margin-top: 1.75rem;
+    align-items: center;
   }
 }
 
@@ -293,7 +294,7 @@ body {
 
 @media screen and (max-width: 375px) {
   .movie-info {
-    transform: translateY(-60px);
+    /* transform: translateY(-60px); */
   }
 }
 

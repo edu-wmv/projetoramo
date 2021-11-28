@@ -12,6 +12,7 @@
   <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
   <link rel="stylesheet" href="/assets/css/lightbox.min.css">
   <link rel="stylesheet" href="/assets/css/tobii.min.css">
+  <link type="text/css" rel="stylesheet" href="/assets/css/lightslider.min.css" />
 
   <link rel="stylesheet" href="farol_home.css" type="text/css">
 
@@ -216,6 +217,33 @@
   
       <section class="container section section__height" id="cinema">
         <h2 class="section__title">Acervo cinematográfico</h2>
+
+        <ul id="auto-width" class="cs-hidden">
+          <li class="item-" onclick="window.location='cinema/alexandria.html'">
+            <div class="movie-box">
+              <div class="movie-image">
+                <img src="https://br.web.img2.acsta.net/c_310_420/pictures/16/01/04/17/03/177052.jpg" alt="">
+              </div>
+              <div class="movie-info">
+                <strong>Alexandria</strong>
+                <span>Aventura, Drama, Histórico</span>
+              </div>
+            </div>
+          </li>
+
+          <li class="item-" onclick="window.location='cinema/meus_dias_no_cairo.html'">
+            <div class="movie-box">
+              <div class="movie-image">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSP_cW9ynamx6cXafrEO_NX8VMYAfMevrHXzIUolzHUk2WTt4pL" alt="">
+              </div>
+              <div class="movie-info">
+                <strong>Meus Dias no Cairo</strong>
+                <span>Drama, Romance</span>
+              </div>
+            </div>
+          </li>
+
+        </ul>
       </section>
 
     </div>
@@ -223,7 +251,7 @@
     <div class="overlay">
       <div class="videoBox" id="videobox">
         <i class='bx bxs-x-circle close-video'></i>
-        <iframe class="video" src="https://www.youtube.com/embed/k7nsChWTyVk?autoplay=1&enablejsapi=1&controls=0" frameborder="0" allow="autoplay"></iframe>
+        <iframe class="video" src="https://www.youtube.com/embed/k7nsChWTyVk?autoplay=1&enablejsapi=1&controls=0" frameborder="0"></iframe>
       </div>
     </div>
     
@@ -244,11 +272,12 @@
   <script src="/assets/js/lightbox-plus-jquery.min.js"></script>
   <script src="/assets/js/tobii.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.1/dist/js.cookie.js"></script>
+  <script src="/assets/js/lightslider.min.js"></script>
 
   <script>
     $(function() {
       $(document).ready(function() {
-        var myCookie = getCookie("show-video");
+        var myCookie = getCookie("show-video_alexandria");
 
         if (myCookie == null) {
           console.log('nop')
@@ -326,6 +355,10 @@ return this.each(function() {
     $(document).on('keyup',function(e) {
       if (e.keyCode == 27) {
         $('.overlay').hide();
+        var date = new Date();
+        var minutes = 30;
+        date.setTime(date.getTime() + (minutes * 60 * 1000));
+        Cookies.set("show-video_alexandria", "1", {expires: date});
       }
     }); 
   
@@ -335,7 +368,7 @@ return this.each(function() {
       var date = new Date();
         var minutes = 30;
         date.setTime(date.getTime() + (minutes * 60 * 1000));
-        Cookies.set("show-video", "1", {expires: date});
+        Cookies.set("show-video_alexandria", "1", {expires: date});
     });
 
     $('body').on('click','.videoBox', function(e) {
@@ -343,7 +376,7 @@ return this.each(function() {
       var date = new Date();
         var minutes = 30;
         date.setTime(date.getTime() + (minutes * 60 * 1000));
-        Cookies.set("show-video", "1", {expires: date});
+        Cookies.set("show-video_alexandria", "1", {expires: date});
     });
   
     $('body').on('click', 'main .home .button', function() {
@@ -351,6 +384,28 @@ return this.each(function() {
       $('.video')[0].contentWindow.postMessage('{"event":"command","func":"' + 'playVideo' + '","args":""}', '*');
     });
   });
+</script>
+
+<script>
+  $(document).ready(function() {
+  $('#auto-width').lightSlider({
+      autoWidth:true,
+      item: 1,
+      slideMove: 1,
+      slideMargin: 30,
+      loop:true,
+      keyPress: true,
+      controls: true,
+      currentPagerPosition: 'middle',
+      pager: false,
+      enableTouch:true,
+      enableDrag:true,
+      onSliderLoad: function() {
+          $('#auto-width').removeClass('cS-hidden');
+      }
+      
+  });  
+});
 </script>
 
 </body>

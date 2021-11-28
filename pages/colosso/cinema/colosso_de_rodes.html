@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>O Colosso de Rodes | Cinema</title>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+
+  <link rel="stylesheet" href="../colosso_home.css" type="text/css">
+  <link rel="stylesheet" href="cinema.css">
+  <link rel="shortchut icon" type="imagex/png" href="/assets/images/cinema.ico">
+
+</head>
+<body>
+
+<header class="header" id="header">
+    <nav class="nav container">
+      <a href="/index.html" class="nav__logo">Projeto Ramo</a>
+
+      <div class="nav__menu" id="nav-menu">
+        <ul class="nav__list">
+
+          <li class="nav__item">
+            <a href="../home.html#home" class="nav__link">
+              <i class='bx bx-home-alt nav__icon'></i>                
+              <span class="nav__name">Home</span>
+            </a>
+          </li>
+
+          <li class="nav__item">
+            <a href="../home.html#pesquisas" class="nav__link">
+              <i class='bx bx-search nav__icon' ></i>
+              <span class="nav__name">Pesquisas</span>
+            </a>
+          </li>
+
+          <li class="nav__item">
+            <a href="../home.html#noticias" class="nav__link">
+              <i class='bx bx-news nav__icon' ></i>
+              <span class="nav__name">Noticias</span>
+            </a>
+          </li>
+
+          <li class="nav__item">
+            <a href="../home.html#galeria" class="nav__link">
+              <i class='bx bx-photo-album nav__icon' ></i>
+              <span class="nav__name">Galeria</span>
+            </a>
+          </li>
+
+          <li class="nav__item">
+            <a href="../home.html#cinema" class="nav__link active-link">
+              <i class='bx bx-movie nav__icon'></i>
+              <span class="nav__name">Cinema</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+</header>
+
+<div class="movie-banner">
+
+  <div class="movie-banner-img">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQF_A17_4mIJGTrIpiGiAkhauKPqtTDcNhiKg&usqp=CAU" alt="">
+  </div>
+
+<div class="movie-info">
+
+  <div class="movie-poster">
+    <img src="https://apaixonadosporhistoria.com.br/img/filmecapa/filme_431_443719920.jpg" alt="">
+  </div>
+
+  <div class="movie-data">
+    <strong>O Colosso de Rodes</strong>
+    <br>
+    <div class="movie-description">
+      <span>No ano de 280 a.C., Darios, um herói militar grego, está visitando seu tio em Rodes. A cidade acabou de construir um enorme Colosso em homenagem a Apolo, para guardar o seu porto, e está planejando uma aliança com a Fenícia para atacar a Grécia. Por acidente, Darios se envolve com rebeldes que querem tirar o tirânico rei Xerxes do poder.</span>
+    </div>
+    <br>
+    <div class="more-info" onclick="window.location='https://filmow.com/o-colosso-de-rodes-t30454/'">
+      <span>Mais informações...</span>
+    </div>
+
+    <div class="watch-options">
+      <button class="button">
+        <i class='bx bx-play'></i>
+        <span>Trailer</span>
+      </button>
+
+      <div class="watch">
+        <span>Disponível em:</span>
+        <div class="options">
+          <a href="https://youtu.be/rnQd6cxQjbY">
+            <span class="iconify" data-icon="logos:youtube-icon"></span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<div class="overlay" style="display: none">
+  <div class="videoBox" id="videobox">
+    <i class='bx bxs-x-circle close'></i>
+    <iframe class="video" src="https://www.youtube.com/embed/jh1hmDr11SY?enablejsapi=1&controls=0" frameborder="0" allow="autoplay"></iframe>
+  </div>
+</div>
+
+<div class="blank"></div>
+
+<a href="#" class="scrollup" id="scroll-up">
+  <i class='bx bx-up-arrow-alt scrollup__icon' ></i>
+</a>
+  
+  <script src="cinema.js"></script>
+  <script src="/assets/js/jquery-3.6.0.min.js"></script>
+  <script src="https://code.iconify.design/2/2.1.0/iconify.min.js"></script>
+  
+  <script>
+    $(function() {
+      $(document).on('keyup',function(e) {
+        if (e.keyCode == 27) {
+          $('.overlay').hide();
+        }
+      }); 
+
+      $(document).onload =  function(){
+        $('.overlay').hide();
+      }
+    
+      $('body').on('click','.overlay, .close', function() {
+        $('.overlay').hide();
+        $('.video')[0].contentWindow.postMessage('{"event":"command","func":"' + 'stopVideo' + '","args":""}', '*');
+      });
+
+      $('body').on('click','.videoBox', function(e) {
+        e.stopPropagation();
+      });
+    
+      $('body').on('click', '.movie-banner .movie-info .watch-options button', function() {
+        $('.overlay').show();
+        $('.video')[0].contentWindow.postMessage('{"event":"command","func":"' + 'playVideo' + '","args":""}', '*');
+      });
+    });
+  </script>
+
+</body>
+</html>

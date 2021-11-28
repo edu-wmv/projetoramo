@@ -11,6 +11,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
   <link rel="stylesheet" href="/assets/css/lightbox.min.css">
+  <link type="text/css" rel="stylesheet" href="/assets/css/lightslider.min.css" />
 
   <link rel="stylesheet" href="artemis_home.css" type="text/css">
 
@@ -171,7 +172,33 @@
       </section>
   
       <section class="container section section__height" id="cinema">
-        <h2 class="section__title">Cinema</h2>
+        <h2 class="section__title">Acervo Cinematográfico</h2>
+
+        <ul id="auto-width" class="cs-hidden">
+          <li class="item-a" onclick="window.location='cinema/grandes_mythes.html'">
+            <div class="movie-box">
+              <div class="movie-image">
+                <img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQjAOGQJQPAJJNXwMDcBAIqfxXwenJWPJTA4jFW17iQHl0qY5Y-" alt="">
+              </div>
+              <div class="movie-info">
+                <strong>Les Grandes Mythes</strong>
+                <span>Animação</span>
+              </div>
+            </div>
+          </li>
+
+          <li class="item-b" onclick="window.location='cinema/liga_da_justica.html'">
+            <div class="movie-box">
+              <div class="movie-image">
+                <img src="https://br.web.img3.acsta.net/c_310_420/pictures/17/10/23/19/55/0260439.jpg" alt="">
+              </div>
+              <div class="movie-info">
+                <strong>Liga da Justiça</strong>
+                <span>Ação, Ficção Científica</span>
+              </div>
+            </div>
+          </li>
+        </ul>
       </section>
 
     </div>
@@ -179,7 +206,7 @@
     <div class="overlay">
       <div class="videoBox" id="videobox">
         <i class='bx bxs-x-circle close-video'></i>
-        <iframe class="video" src="https://www.youtube.com/embed/JLkFvh1JN6U?autoplay=1&enablejsapi=1&controls=0" frameborder="0" allow="autoplay"></iframe>
+        <iframe class="video" src="https://www.youtube.com/embed/JLkFvh1JN6U?autoplay=1&enablejsapi=1&controls=0" frameborder="0"></iframe>
       </div>
     </div>
 
@@ -199,11 +226,12 @@
   <script src="../../assets/js/e-search.min.js"></script>
   <script src="/assets/js/lightbox-plus-jquery.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.1/dist/js.cookie.js"></script>
+  <script src="/assets/js/lightslider.min.js"></script>
 
   <script>
     $(function() {
       $(document).ready(function() {
-        var myCookie = getCookie("show-video");
+        var myCookie = getCookie("show-video_artemis");
 
         if (myCookie == null) {
           console.log('nop')
@@ -227,9 +255,9 @@
       }
    }
    return decodeURI(dc.substring(begin + prefix.length, end));
-}
+    }
       })
-})
+    })
 
   </script>
 
@@ -249,6 +277,10 @@
     $(document).on('keyup',function(e) {
       if (e.keyCode == 27) {
         $('.overlay').hide();
+        var date = new Date();
+        var minutes = 30;
+        date.setTime(date.getTime() + (minutes * 60 * 1000));
+        Cookies.set("show-video_artemis", "1", {expires: date});
       }
     }); 
   
@@ -258,7 +290,7 @@
       var date = new Date();
         var minutes = 30;
         date.setTime(date.getTime() + (minutes * 60 * 1000));
-        Cookies.set("show-video", "1", {expires: date});
+        Cookies.set("show-video_artemis", "1", {expires: date});
     });
 
     $('body').on('click','.videoBox', function(e) {
@@ -266,7 +298,7 @@
       var date = new Date();
         var minutes = 30;
         date.setTime(date.getTime() + (minutes * 60 * 1000));
-        Cookies.set("show-video", "1", {expires: date});
+        Cookies.set("show-video_artemis", "1", {expires: date});
     });
   
     $('body').on('click', '.blog-article, .article-container .button', function() {
@@ -279,16 +311,16 @@
 <script>
   $(function() {
 
-$(document).ready(function() {
+  $(document).ready(function() {
   $("div.masonry").randomize("div.grid-images");
-});
+  });
 
-});
+  });
 
-(function($) {
+  (function($) {
 
-$.fn.randomize = function(childElem) {
-return this.each(function() {
+  $.fn.randomize = function(childElem) {
+  return this.each(function() {
     var $this = $(this);
     var elems = $this.children(childElem);
 
@@ -299,9 +331,31 @@ return this.each(function() {
     for(var i=0; i < elems.length; i++)
       $this.append(elems[i]);      
 
-});    
-}
-})(jQuery);
+  });    
+  }
+  })(jQuery);
+</script>
+
+<script>
+  $(document).ready(function() {
+  $('#auto-width').lightSlider({
+      autoWidth:true,
+      item: 1,
+      slideMove: 1,
+      slideMargin: 30,
+      loop:true,
+      keyPress: true,
+      controls: true,
+      currentPagerPosition: 'middle',
+      pager: false,
+      enableTouch:true,
+      enableDrag:true,
+      onSliderLoad: function() {
+          $('#auto-width').removeClass('cS-hidden');
+      }
+      
+  });  
+});
 </script>
 
 </body>

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Liga da Justiça | Cinema</title>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+
+  <link rel="stylesheet" href="../artemis_home.css" type="text/css">
+  <link rel="stylesheet" href="cinema.css">
+  <link rel="shortchut icon" type="imagex/png" href="/assets/images/cinema.ico">
+
+</head>
+<body>
+
+<header class="header" id="header">
+    <nav class="nav container">
+      <a href="/index.html" class="nav__logo">Projeto Ramo</a>
+
+      <div class="nav__menu" id="nav-menu">
+        <ul class="nav__list">
+
+          <li class="nav__item">
+            <a href="../home.html#home" class="nav__link">
+              <i class='bx bx-home-alt nav__icon'></i>                
+              <span class="nav__name">Home</span>
+            </a>
+          </li>
+
+          <li class="nav__item">
+            <a href="../home.html#pesquisas" class="nav__link">
+              <i class='bx bx-search nav__icon' ></i>
+              <span class="nav__name">Pesquisas</span>
+            </a>
+          </li>
+
+          <li class="nav__item">
+            <a href="../home.html#noticias" class="nav__link">
+              <i class='bx bx-news nav__icon' ></i>
+              <span class="nav__name">Noticias</span>
+            </a>
+          </li>
+
+          <li class="nav__item">
+            <a href="../home.html#galeria" class="nav__link">
+              <i class='bx bx-photo-album nav__icon' ></i>
+              <span class="nav__name">Galeria</span>
+            </a>
+          </li>
+
+          <li class="nav__item">
+            <a href="../home.html#cinema" class="nav__link active-link">
+              <i class='bx bx-movie nav__icon'></i>
+              <span class="nav__name">Cinema</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+</header>
+
+<div class="movie-banner">
+
+  <div class="movie-banner-img">
+    <img src="https://br.web.img3.acsta.net/r_1920_1080/pictures/17/10/25/14/21/5343617.jpg" alt="">
+  </div>
+
+<div class="movie-info">
+
+  <div class="movie-poster">
+    <img src="https://br.web.img3.acsta.net/c_310_420/pictures/17/10/23/19/55/0260439.jpg" alt="">
+  </div>
+
+  <div class="movie-data">
+    <strong>Liga da Justiça</strong>
+    <br>
+    <div class="movie-description">
+      <span>Em Liga da Justiça, impulsionado pela restauração de sua fé na humanidade e inspirado pelo ato altruísta do Superman (Henry Cavill), Bruce Wayne (Ben Affleck) convoca sua nova aliada Diana Prince (Gal Gadot) para o combate contra um inimigo ainda maior, recém-despertado. Juntos, Batman e Mulher-Maravilha buscam e recrutam com agilidade um time de meta-humanos, mas mesmo com a formação da liga de heróis sem precedentes - Batman, Mulher-Maraviha, Aquaman (Jason Momoa), Cyborg (Ray Fisher) e Flash (Ezra Miller) -, poderá ser tarde demais para salvar o planeta de um catastrófico ataque.</span>
+    </div>
+    <br>
+    <div class="more-info" onclick="window.location='https://www.adorocinema.com/filmes/filme-126527'">
+      <span>Mais informações...</span>
+    </div>
+
+    <div class="watch-options">
+      <button class="button">
+        <i class='bx bx-play'></i>
+        <span>Trailer</span>
+      </button>
+
+      <div class="watch">
+        <span>Disponível em:</span>
+        <div class="options">
+          <a href="https://www.netflix.com/br-en/title/80187362?source=35" style="display: flex; align-items: center;">
+            <span class="iconify" data-icon="logos:netflix-icon"></span>
+          </a>
+          <a href="https://www.hbomax.com/br/pt/feature/urn:hbo:feature:GYDAnZgCFQ8IJpQEAAAAN" style="display: flex; align-items: center;">
+            <span class="iconify" data-icon="simple-icons:hbo" style="color: white; padding-left: 15px; font-size: 3rem;"></span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<div class="overlay" style="display: none">
+  <div class="videoBox" id="videobox">
+    <i class='bx bxs-x-circle close'></i>
+    <iframe class="video" src="https://www.youtube.com/embed/BZUm2lpPoKM?enablejsapi=1&controls=0" frameborder="0" allow="autoplay"></iframe>
+  </div>
+</div>
+
+<div class="blank"></div>
+
+<a href="#" class="scrollup" id="scroll-up">
+  <i class='bx bx-up-arrow-alt scrollup__icon' ></i>
+</a>
+  
+  <script src="cinema.js"></script>
+  <script src="/assets/js/jquery-3.6.0.min.js"></script>
+  <script src="https://code.iconify.design/2/2.1.0/iconify.min.js"></script>
+  
+  <script>
+    $(function() {
+      $(document).on('keyup',function(e) {
+        if (e.keyCode == 27) {
+          $('.overlay').hide();
+        }
+      }); 
+
+      $(document).onload =  function(){
+        $('.overlay').hide();
+      }
+    
+      $('body').on('click','.overlay, .close', function() {
+        $('.overlay').hide();
+        $('.video')[0].contentWindow.postMessage('{"event":"command","func":"' + 'stopVideo' + '","args":""}', '*');
+      });
+
+      $('body').on('click','.videoBox', function(e) {
+        e.stopPropagation();
+      });
+    
+      $('body').on('click', '.movie-banner .movie-info .watch-options button', function() {
+        $('.overlay').show();
+        $('.video')[0].contentWindow.postMessage('{"event":"command","func":"' + 'playVideo' + '","args":""}', '*');
+      });
+    });
+  </script>
+
+</body>
+</html>

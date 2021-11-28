@@ -2,12 +2,12 @@
 
 :root {
 
-  --hue-color: 51;
+  --hue-color: 140;
 
-  --first-color: hsl(var(--hue-color), 75%, 56%);
-  --first-color-second: hsl(var(--hue-color), 75%, 56%);
+  --first-color: hsl(var(--hue-color), 35%, 56%);
+  --first-color-second: hsl(var(--hue-color), 35%, 56%);
   --first-color-alt: hsl(var(--hue-color), 75%, 49%);
-  --title-color: hsl(var(--hue-color), 75%, 52%);
+  --title-color: hsl(var(--hue-color), 55%, 22%);
   --text-color: hsl(var(--hue-color), 24%, 42%);
   --text-color-light: hsl(var(--hue-color), 8%, 60%);
   --input-color: hsl(var(--hue-color), 24%, 97%);
@@ -15,7 +15,7 @@
   --white-color: #FFF;
   --scroll-bar-color: hsl(var(--hue-color), 12%, 90%);
   --scroll-thumb-color: hsl(var(--hue-color), 15%, 75%);
-  --selection-color: hsl(var(--hue-color), 97%, 81%);
+  --selection-color: hsl(var(--hue-color), 40%, 69%);
 
   --body-font: 'Open Sans', sans-serif;
   --title-font: 'Raleway', sans-serif;
@@ -203,6 +203,11 @@ body {
   }
 }
 
+.movie-poster {
+  display: flex;
+  justify-content: center;
+}
+
 .watch-options {
   display: flex;
 }
@@ -265,6 +270,9 @@ body {
     margin-left: 0;
     margin-top: 1.75rem;
     align-items: center;
+  }
+  .movie-poster img {
+    width: 90%;
   }
 }
 

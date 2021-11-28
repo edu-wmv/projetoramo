@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alexandria | Cinema</title>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+
+  <link rel="stylesheet" href="../farol_home.css" type="text/css">
+  <link rel="stylesheet" href="cinema.css">
+  <link rel="shortchut icon" type="imagex/png" href="/assets/images/cinema.ico">
+
+</head>
+<body>
+
+<header class="header" id="header">
+    <nav class="nav container">
+      <a href="/index.html" class="nav__logo">Projeto Ramo</a>
+
+      <div class="nav__menu" id="nav-menu">
+        <ul class="nav__list">
+
+          <li class="nav__item">
+            <a href="../home.html#home" class="nav__link">
+              <i class='bx bx-home-alt nav__icon'></i>                
+              <span class="nav__name">Home</span>
+            </a>
+          </li>
+
+          <li class="nav__item">
+            <a href="../home.html#pesquisas" class="nav__link">
+              <i class='bx bx-search nav__icon' ></i>
+              <span class="nav__name">Pesquisas</span>
+            </a>
+          </li>
+
+          <li class="nav__item">
+            <a href="../home.html#noticias" class="nav__link">
+              <i class='bx bx-news nav__icon' ></i>
+              <span class="nav__name">Noticias</span>
+            </a>
+          </li>
+
+          <li class="nav__item">
+            <a href="../home.html#galeria" class="nav__link">
+              <i class='bx bx-photo-album nav__icon' ></i>
+              <span class="nav__name">Galeria</span>
+            </a>
+          </li>
+
+          <li class="nav__item">
+            <a href="../home.html#cinema" class="nav__link active-link">
+              <i class='bx bx-movie nav__icon'></i>
+              <span class="nav__name">Cinema</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+</header>
+
+<div class="movie-banner">
+
+  <div class="movie-banner-img">
+    <img src="https://br.web.img3.acsta.net/r_512_288/medias/nmedia/18/70/32/36/19105905.jpg" alt="">
+  </div>
+
+<div class="movie-info">
+
+  <div class="movie-poster">
+    <img src="https://br.web.img2.acsta.net/c_310_420/pictures/16/01/04/17/03/177052.jpg" alt="">
+  </div>
+
+  <div class="movie-data">
+    <strong>Alexandria</strong>
+    <br>
+    <div class="movie-description">
+      <span>Em Alexandria, no ano de 391, Hipátia é professora de astronomia e matemática, além de filósofa. Um dos seus alunos, Orestes, está apaixonado por ela, assim como o seu escravo Davus. Juntos, eles deverão lutar contra extinção da biblioteca local e outras grandes instituições, que não devem sobreviver quando o Cristianismo ganha poder político na cidade.</span>
+    </div>
+    <br>
+    <div class="more-info" onclick="window.location='https://www.adorocinema.com/filmes/filme-134194'">
+      <span>Mais informações...</span>
+    </div>
+
+    <div class="watch-options">
+      <button class="button">
+        <i class='bx bx-play'></i>
+        <span>Trailer</span>
+      </button>
+
+    </div>
+  </div>
+</div>
+</div>
+
+<div class="overlay" style="display: none">
+  <div class="videoBox" id="videobox">
+    <i class='bx bxs-x-circle close'></i>
+    <iframe class="video" src="https://www.youtube.com/embed/g31D4ZrSmcY?enablejsapi=1&controls=0" frameborder="0" allow="autoplay"></iframe>
+  </div>
+</div>
+
+<div class="blank"></div>
+
+<a href="#" class="scrollup" id="scroll-up">
+  <i class='bx bx-up-arrow-alt scrollup__icon' ></i>
+</a>
+  
+  <script src="cinema.js"></script>
+  <script src="/assets/js/jquery-3.6.0.min.js"></script>
+  <script src="https://code.iconify.design/2/2.1.0/iconify.min.js"></script>
+  
+  <script>
+    $(function() {
+      $(document).on('keyup',function(e) {
+        if (e.keyCode == 27) {
+          $('.overlay').hide();
+        }
+      }); 
+
+      $(document).onload =  function(){
+        $('.overlay').hide();
+      }
+    
+      $('body').on('click','.overlay, .close', function() {
+        $('.overlay').hide();
+        $('.video')[0].contentWindow.postMessage('{"event":"command","func":"' + 'stopVideo' + '","args":""}', '*');
+      });
+
+      $('body').on('click','.videoBox', function(e) {
+        e.stopPropagation();
+      });
+    
+      $('body').on('click', '.movie-banner .movie-info .watch-options button', function() {
+        $('.overlay').show();
+        $('.video')[0].contentWindow.postMessage('{"event":"command","func":"' + 'playVideo' + '","args":""}', '*');
+      });
+    });
+  </script>
+
+</body>
+</html>
