@@ -192,6 +192,10 @@ body {
 
 }
 
+.swiper-phone {
+  margin-bottom: 1.5rem;
+}
+
 footer {
   position: fixed;
   bottom: 0;
