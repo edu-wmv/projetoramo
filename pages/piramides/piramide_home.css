@@ -760,3 +760,23 @@ input {
   }
 
 }
+
+/*---------------------------------------------*/
+
+.video-masonry {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.video-grid {
+  margin-right: 1rem;
+  width: 300px; 
+}
+
+@media screen and (max-width: 425px) {
+  .video-grid {
+    margin-right: 0;
+  }
+}

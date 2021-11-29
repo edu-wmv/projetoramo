@@ -12,8 +12,11 @@
   <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
   <link rel="stylesheet" href="/assets/css/lightbox.min.css">
   <link type="text/css" rel="stylesheet" href="/assets/css/lightslider.min.css" />
+  <link rel="stylesheet" href="/assets/css/mediabox.min.css" />
 
   <link rel="stylesheet" href="zeus_home.css" type="text/css">
+
+  <link rel="shortchut icon" type="imagex/png" href="/assets/images/zeus.ico">
 
 
 </head>
@@ -44,6 +47,13 @@
             <a href="#noticias" class="nav__link">
               <i class='bx bx-news nav__icon' ></i>
               <span class="nav__name">Noticias</span>
+            </a>
+          </li>
+
+          <li class="nav__item">
+            <a href="#curiosidades" class="nav__link">
+              <i class='bx bx-question-mark nav__icon'></i>
+              <span class="nav__name">Curiosidades</span>
             </a>
           </li>
 
@@ -110,11 +120,6 @@
             </div>
           </a>
 
-          <a href="pesquisas/arthur.html" class="pesquisa__link" data-search="arthur artur">
-            <div class="pesquisa">
-              <span>arthur</span>
-            </div>
-          </a>
         </div>
       </section>
 
@@ -153,6 +158,22 @@
               </div>
           </div>
 
+        </div>
+      </section>
+
+      <section class="section" id="curiosidades">
+        <h2 class="section__title">Curiosidades</h2>
+
+        <div class="video-masonry masonry">
+          <div class="grid-images video-grid">
+            <a href="https://youtube.com/watch?v=djORWORFEJY" class="mediabox"><img src="https://img.youtube.com/vi/djORWORFEJY/sddefault.jpg"></a>
+            <span class="student-name">Adriele Santos</span>
+          </div>
+
+          <div class="grid-images video-grid">
+            <a href="https://youtube.com/watch?v=be545OMc9FY" class="mediabox"><img src="https://img.youtube.com/vi/be545OMc9FY/sddefault.jpg"></a>
+            <span class="student-name">Arthur Nascimento</span>
+          </div>
         </div>
       </section>
 
@@ -232,7 +253,7 @@
     <div class="overlay">
       <div class="videoBox" id="videobox">
         <i class='bx bxs-x-circle close-video'></i>
-        <iframe class="video" src="https://www.youtube.com/embed/Rz0RdI7Z5qU?autoplay=1&enablejsapi=1&controls=0" frameborder="0" allow="autoplay"></iframe>
+        <iframe class="video" src="https://www.youtube.com/embed/Rz0RdI7Z5qU?enablejsapi=1&controls=0" frameborder="0"></iframe>
       </div>
     </div>
 
@@ -253,6 +274,7 @@
   <script src="/assets/js/lightbox-plus-jquery.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.1/dist/js.cookie.js"></script>
   <script src="/assets/js/lightslider.min.js"></script>
+  <script src="/assets/js/mediabox.min.js"></script>
 
   <script>
     $(function() {
@@ -335,6 +357,8 @@
 </script>
 
 <script>
+  MediaBox('.mediabox')
+
   $(document).ready(function() {
   $('#auto-width').lightSlider({
       autoWidth:true,

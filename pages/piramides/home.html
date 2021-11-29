@@ -10,9 +10,12 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
   <link rel="stylesheet" href="/assets/css/lightbox.min.css">
+  <link rel="stylesheet" href="/assets/css/tobii.min.css">
   <link type="text/css" rel="stylesheet" href="/assets/css/lightslider.min.css" /> 
+  <link rel="stylesheet" href="/assets/css/mediabox.min.css" />
 
   <link rel="stylesheet" href="piramide_home.css" type="text/css">
+  <link rel="shortchut icon" type="imagex/png" href="/assets/images/piramides.ico">
 
 </head>
 <body>
@@ -35,6 +38,13 @@
             <a href="#pesquisas" class="nav__link">
               <i class='bx bx-search nav__icon' ></i>
               <span class="nav__name">Pesquisas</span>
+            </a>
+          </li>
+
+          <li class="nav__item">
+            <a href="#curiosidades" class="nav__link">
+              <i class='bx bx-question-mark nav__icon'></i>
+              <span class="nav__name">Curiosidades</span>
             </a>
           </li>
 
@@ -305,6 +315,43 @@
       </div>
     </section>
 
+    <section class="section" id="curiosidades">
+      <h2 class="section__title">Curiosidades</h2>
+
+      <div class="video-masonry masonry">
+        <div class="grid-images video-grid">
+          <a href="https://youtube.com/watch?v=CtyBSaFJs6g" class="mediabox"><img src="https://img.youtube.com/vi/CtyBSaFJs6g/sddefault.jpg"></a>
+          <span class="student-name">Arthur Almeida</span>
+        </div>
+
+        <div class="grid-images video-grid">
+          <a href="https://youtube.com/watch?v=d-CyJMONQIs" class="mediabox"><img src="https://img.youtube.com/vi/d-CyJMONQIs/sddefault.jpg"></a>
+          <span class="student-name">Bruno Davi</span>
+        </div>
+        
+        <div class="grid-images video-grid">
+          <a href="https://youtube.com/watch?v=EJ0qQG2tNUs" class="mediabox"><img src="https://img.youtube.com/vi/EJ0qQG2tNUs/sddefault.jpg"></a>
+          <span class="student-name">Clara Gomes</span>
+        </div>
+
+        <div class="grid-images video-grid">
+          <a href="https://youtube.com/watch?v=XbAv9YTUdrI" class="mediabox"><img src="https://img.youtube.com/vi/XbAv9YTUdrI/sddefault.jpg"></a>
+          <span class="student-name">João Rodrigo</span>
+        </div>
+
+        <div class="grid-images video-grid">
+          <a href="https://youtube.com/watch?v=9DZXOTbVzMI" class="mediabox"><img src="https://img.youtube.com/vi/9DZXOTbVzMI/sddefault.jpg"></a>
+          <span class="student-name">João Vitor</span>
+        </div>
+
+        <div class="grid-images video-grid">
+          <a href="https://youtube.com/watch?v=jRYEMd7UvFM" class="mediabox"><img src="https://img.youtube.com/vi/jRYEMd7UvFM/sddefault.jpg"></a>
+          <span class="student-name">Luana Gomes</span>
+        </div>
+
+      </div>
+    </section>
+
     <section class="section" id="galeria">
       <h2 class="section__title">Galeria de Arte</h2>
 
@@ -527,7 +574,7 @@
     <div class="overlay">
   <div class="videoBox" id="videobox">
     <i class='bx bxs-x-circle close-video'></i>
-    <iframe class="video" src="https://www.youtube.com/embed/gU3UOJleQqw?autoplay=1&enablejsapi=1&controls=0" frameborder="0"></iframe>
+    <iframe class="video" src="https://www.youtube.com/embed/16ghdj7rOtA?enablejsapi=1&controls=0" frameborder="0"></iframe>
   </div>
     </div>
 
@@ -548,6 +595,8 @@
 <script src="/assets/js/lightbox-plus-jquery.min.js"></script>
 <script src="/assets/js/lightslider.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.1/dist/js.cookie.js"></script>
+<script src="/assets/js/tobii.min.js"></script>
+<script src="/assets/js/mediabox.min.js"></script>
 
 <script>
     $(function() {
@@ -584,6 +633,12 @@
 </script>
 
 <script>
+    MediaBox('.mediabox')
+
+    const tobii = new Tobii({
+    selector: '.videoLightbox'
+    });
+
     lightbox.option({
     'showImageNumberLabel': false,
     'alwaysShowNavOnTouchDevices': true

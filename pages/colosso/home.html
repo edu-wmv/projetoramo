@@ -12,9 +12,10 @@
   <link rel="stylesheet" href="/assets/css/lightbox.min.css">
   <link rel="stylesheet" href="/assets/css/tobii.min.css">
   <link type="text/css" rel="stylesheet" href="/assets/css/lightslider.min.css" />
-
+  <link rel="stylesheet" href="/assets/css/mediabox.min.css" />
 
   <link rel="stylesheet" href="colosso_home.css" type="text/css">
+  <link rel="shortchut icon" type="imagex/png" href="/assets/images/colosso.ico">
 
 </head>
 <body>
@@ -44,6 +45,13 @@
             <a href="#noticias" class="nav__link">
               <i class='bx bx-news nav__icon' ></i>
               <span class="nav__name">Noticias</span>
+            </a>
+          </li>
+
+          <li class="nav__item">
+            <a href="#curiosidades" class="nav__link">
+              <i class='bx bx-question-mark nav__icon'></i>
+              <span class="nav__name">Curiosidades</span>
             </a>
           </li>
 
@@ -243,6 +251,32 @@
         </div>
       </section>
 
+      <section class="section" id="curiosidades">
+        <h2 class="section__title">Curiosidades</h2>
+
+        <div class="masonry video-masonry">
+          <div class="grid-images video-grid">
+            <a href="https://youtube.com/watch?v=VkZ_cAP3or0" class="mediabox"><img src="https://img.youtube.com/vi/VkZ_cAP3or0/sddefault.jpg"></a>
+            <span class="student-name">Gustavo Kelvin</span>
+          </div>
+
+          <div class="grid-images video-grid">
+            <a href="https://youtube.com/watch?v=hgTkgbycqoY" class="mediabox"><img src="https://img.youtube.com/vi/hgTkgbycqoY/sddefault.jpg"></a>
+            <span class="student-name">Julia Assunção</span>
+          </div>
+
+          <div class="grid-images video-grid">
+            <a href="https://youtube.com/watch?v=XnGN_JOnq5c" class="mediabox"><img src="https://img.youtube.com/vi/XnGN_JOnq5c/sddefault.jpg"></a>
+            <span class="student-name">Marcelle Vitória</span>
+          </div>
+
+          <div class="grid-images video-grid">
+            <a href="https://youtube.com/watch?v=f8nGEqoUiVU" class="mediabox"><img src="https://img.youtube.com/vi/f8nGEqoUiVU/sddefault.jpg"></a>
+            <span class="student-name">Saulo Porcino</span>
+          </div>
+        </div>
+      </section>
+
       <section class="container section" id="galeria">
       <h2 class="section__title">Galeria de Arte</h2>
 
@@ -316,7 +350,7 @@
     <div class="overlay">
       <div class="videoBox" id="videobox">
         <i class='bx bxs-x-circle close-video'></i>
-        <iframe class="video" src="https://www.youtube.com/embed/V3G1GVPFqv8?autoplay=1&enablejsapi=1&controls=0" frameborder="0" allow="autoplay"></iframe>
+        <iframe class="video" src="https://www.youtube.com/embed/JW3mQUQFJgQ?enablejsapi=1&controls=0" frameborder="0"></iframe>
       </div>
     </div>
 
@@ -338,6 +372,7 @@
   <script src="/assets/js/tobii.min.js"></script>
   <script src="/assets/js/lightslider.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.1/dist/js.cookie.js"></script>
+  <script src="/assets/js/mediabox.min.js"></script>
 
   <script>
     $(function() {
@@ -373,6 +408,8 @@
   </script>
 
   <script>
+    MediaBox('.mediabox');
+
     const tobii = new Tobii({
       selector: '.videoLightbox'
     });

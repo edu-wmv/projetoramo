@@ -85,12 +85,14 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-top: 15px;
 }
 
 .main-heading h1 {
   font-size: var(--biggest-font-size);
   font-weight: 600;
   line-height: 40px;
+  text-align: center;
 }
 
 .by-box {
