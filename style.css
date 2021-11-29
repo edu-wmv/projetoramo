@@ -192,10 +192,6 @@ body {
 
 }
 
-.swiper-phone {
-  transform: translateY(3%);
-}
-
 footer {
   position: fixed;
   bottom: 0;
